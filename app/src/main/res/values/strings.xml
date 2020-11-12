@@ -1,0 +1,48 @@
+<resources>
+
+    <string name="app_name">MarefGroup</string>
+    <string name="capacitaciones">Capacitaciones
+    \n On-line y Tutoriales.</string>
+    <string name="aditivos">Aditivos para fluidos de perforación.</string>
+    <string name="equipos">Equipos de perforación y UCS</string>
+    <string name="aula_virtual">Aula Virtual</string>
+    <string name="backButton">Boton atrás</string>
+    <string name="logo">Logo Marefgroup</string>
+    <string name="cronometroText">CRONÓMETRO</string>
+    <string name="contactoText">CONTACTO</string>
+    <string name="catalogoText">CATÁLOGO DE PRODUCTOS </string>
+    <string name="cron_metro">⏱ CRONÓMETRO</string>
+    <string name="botonCronometro">Boton del cronometro</string>
+
+
+    <string name="contactobody">
+
+        Somos una empresa argentina
+        dedicada al diseño y desarrollo de:
+
+        \n\n -Fluidos de P&amp;Wo.
+        \n -Productos para perforaciones mineras.
+        \n -HDD.
+
+        \n\n Asímismo, brindamos servicios de:
+        \n\n -Provisión,
+        \n -Inyección de fluidos.
+        \n -Perforación.
+        \n -Workover.
+        \n -Asistencia técnica de operaciones.
+
+        \n\n Logramos convertirnos en un referente dentro del sector petrolero
+        por nuestro crecimiento continuo,
+        \n garantizando una sólida cartera de productos, como el suministro, transporte de
+        materiales y la asistencia técnica en la locación del cliente.
+
+
+    </string>
+
+    <string name="maref">MAREF.COM.AR</string>
+    <string name="visitanos">Para más información visitános en: </string>
+
+    <string name="acidos">ÁCIDOS</string>
+
+
+</resources>
