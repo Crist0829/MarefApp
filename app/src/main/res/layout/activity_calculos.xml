@@ -1,9 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Calculos">
+    android:background="@color/fondo"
+    tools:context=".Cronometro">
+
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/baseline_arrow_back_black_18dp"
+        android:backgroundTint="@color/naranja"
+        android:contentDescription="@string/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margen"
+        android:contentDescription="@string/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo"
+        android:background="@color/beige"/>
+
+
+    <TextView
+        android:id="@+id/titulo"
+        style="@style/titulos"
+        android:text="@string/calculosText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <ScrollView
+        android:id="@+id/Scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_constraintVertical_bias="0.97">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/gris_claro">
+
+
+            <Button
+                android:id="@+id/volumenPozo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VOLUMEN DE POZO"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+
+            <Button
+                android:id="@+id/volumenAnular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VOLUMEN ANULAR"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/velocidadAnular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VELOCIDAD ANULAR"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/tiempoRetorno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TIEMPO DE RETORNO"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/porcentajeSolidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="% DE SÓLIDOS"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/volumenTanque"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VOLUMEN DE TANQUE"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/caudalBomba"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CAUDAL DE BOMBA"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/reduccionSolidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REDUCCIÓN DE % DE SÓLIDOS"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/densificacionBarita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DENSIFICACIÓN CON BARITA"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/reduccionDensidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REDUCCIÓN DE DENSIDAD DE LODO POR DISOLUCIÓN"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/velocidadPenetracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VELOCIDAD DE PENETRACIÓN"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+            <Button
+                android:id="@+id/guia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GUÍA DE REFERENCIAS"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/naranja"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_medium"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Scroll"
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@color/subfondo">
+
+        <Button
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/gris"
+            android:text="HOME"
+            android:drawableTop="@drawable/home"
+            android:background="@color/fondo" />
+        <Button
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/gris"
+            android:text="SETTINGS"
+            android:drawableTop="@drawable/settings"
+            android:background="@color/fondo"
+            />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

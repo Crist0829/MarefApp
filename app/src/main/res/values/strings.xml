@@ -10,35 +10,101 @@
     <string name="logo">Logo Marefgroup</string>
     <string name="cronometroText">CRONÓMETRO</string>
     <string name="contactoText">CONTACTO</string>
+    <string name="volumen">VOLUMEN DEL POZO</string>
+    <string name="diametro">DIÁMETRO DEL POZO:</string>
+    <string name="longitud">LONGITUD DEL POZO:</string>
+    <string name="calcular">CALCULAR</string>
     <string name="catalogoText">CATÁLOGO DE PRODUCTOS </string>
+    <string name="calculosText">CÁLCULOS</string>
+    <string name="configuracionText">CONFIGURACIÓN</string>
     <string name="cron_metro">⏱ CRONÓMETRO</string>
     <string name="botonCronometro">Boton del cronometro</string>
 
 
     <string name="contactobody">
 
-        Somos una empresa argentina
-        dedicada al diseño y desarrollo de:
+        Somos una empresa argentina dedicada al
+        diseño y desarrollo de fluidos de P&amp;Wo,
+        productos para perforaciones mineras y
+        HDD. Asímismo, brindamos servicios de
+        provisión e inyección de fluidos de
+        perforación y workover, y asistencia técnica
+        de operaciones.
 
-        \n\n -Fluidos de P&amp;Wo.
-        \n -Productos para perforaciones mineras.
-        \n -HDD.
+        \n\n Logramos convertirnos en un referente
+        dentro del sector petrolero por nuestro
+        crecimiento continuo, garantizando una
+        sólida cartera de productos, como el
+        suministro, transporte de materiales y la
+        asistencia técnica en la locación del cliente.
 
-        \n\n Asímismo, brindamos servicios de:
-        \n\n -Provisión,
-        \n -Inyección de fluidos.
-        \n -Perforación.
-        \n -Workover.
-        \n -Asistencia técnica de operaciones.
-
-        \n\n Logramos convertirnos en un referente dentro del sector petrolero
-        por nuestro crecimiento continuo,
-        \n garantizando una sólida cartera de productos, como el suministro, transporte de
-        materiales y la asistencia técnica en la locación del cliente.
-
+        \n\n para más información visitanos en
 
     </string>
 
+    <string name="argentinaUbicaion">
+
+        Mendoza
+
+        \n\nAdministración y planta industrial.
+        \nRP 84 Nº 8400, Parque Industrial Municipal, Predio f5, Luján de Cuyo,
+        Mendoza +54 9 261 536 1917
+
+        \n\nMinería, Construcción Civil y HDD.
+        \nEspejo Oeste Nº 240, Russell, Maipú, Mendoza,
+        info@maref.com.ar
+
+        \n\nNeuquén
+        \nParque Industrial Añelo, RN 7, MZ F lote 54.
+
+    </string>
+
+    <string name="chileUbicaion">
+
+        Santiago de Chile.
+
+        \n\nAvenia los conquistaores 1700, Piso 1, info@maref.com.cl
+        \n+ 56 930940371.
+
+        \n\nCoquimbo, IV Región.
+        \nRuta 43, Nº 701, bodega D-1.
+        \nCentro empresarial, Alto Peñuelas.
+
+    </string>
+
+    <string name="peruUbicaion">
+
+        Lima.
+
+        \n\nAvenida Nicolás Ayllón 3080, int AJ-17.
+        \ninfo@maref.pe.
+        \n+51 986601617.
+
+    </string>
+
+    <string name="ayudaContent">
+
+        Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    </string>
+
+    <string name="actualizacionesContent">
+
+        Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    </string>
+
+    <string name="link">http://www.maref.com.ar/nosotros/</string>
     <string name="maref">MAREF.COM.AR</string>
     <string name="visitanos">Para más información visitános en: </string>
 

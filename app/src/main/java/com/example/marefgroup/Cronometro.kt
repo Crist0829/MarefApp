@@ -48,55 +48,51 @@ class Cronometro : AppCompatActivity() {
                     cronometro.start()
                     runVar = true
 
-                }
+                }else{
 
-            }
+                    when(cont){
 
-            R.id.pause -> {
+                        0->{
 
-                when(cont){
+                            if(runVar){
 
-                    0->{
+                                stopVar = SystemClock.elapsedRealtime() - cronometro.base
+                                cronometro2.base = cronometro.base
+                                cont ++
 
-                        if(runVar){
-
-                            stopVar = SystemClock.elapsedRealtime() - cronometro.base
-                            cronometro2.base = cronometro.base
-                            cont ++
+                            }
 
                         }
 
-                    }
+                        1->{
 
-                    1->{
+                            if(runVar){
 
-                        if(runVar){
+                                stopVar = SystemClock.elapsedRealtime() - cronometro.base
+                                cronometro3.base = cronometro.base
+                                cont ++
 
-                            stopVar = SystemClock.elapsedRealtime() - cronometro.base
-                            cronometro3.base = cronometro.base
-                            cont ++
-
-                        }
-
-                    }
-
-                    2->{
-
-                        if(runVar){
-
-                            stopVar = SystemClock.elapsedRealtime() - cronometro.base
-                            cronometro4.base = cronometro.base
-                            cont = 0
+                            }
 
                         }
 
+                        2->{
+
+                            if(runVar){
+
+                                stopVar = SystemClock.elapsedRealtime() - cronometro.base
+                                cronometro4.base = cronometro.base
+                                cont = 0
+
+                            }
+
+                        }
+
+
+
                     }
-
-
 
                 }
-
-
 
             }
 

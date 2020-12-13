@@ -17,24 +17,20 @@
         android:backgroundTint="@color/naranja"
         android:contentDescription="@string/backButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:background="@color/beige"
         android:contentDescription="@string/logo"
+        android:padding="@dimen/padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/ic_logo" />
 
     <TextView
         android:id="@+id/titulo"
@@ -62,21 +58,12 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_medium"
         android:textColor="@color/gris"
-        android:textSize="40sp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cronobody" />
-
-    <Chronometer
-        android:id="@+id/cronobody3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_medium"
-        android:textColor="@color/gris"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cronobody2" />
+        app:layout_constraintTop_toBottomOf="@+id/play"
+        app:layout_constraintVertical_bias="0.16000003" />
 
     <Chronometer
         android:id="@+id/cronobody4"
@@ -84,24 +71,40 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_medium"
         android:textColor="@color/gris"
-        android:textSize="40sp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cronobody3" />
+        app:layout_constraintTop_toBottomOf="@+id/cronobody3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Chronometer
+        android:id="@+id/cronobody3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/gris"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cronobody2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/botonCronometro"
         android:onClick="cronometroAction"
         app:backgroundTint="@color/naranja"
-        app:layout_constraintEnd_toStartOf="@+id/pause"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stop"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cronobody4"
+        app:layout_constraintTop_toBottomOf="@+id/cronobody"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/play" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -109,33 +112,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
         android:contentDescription="@string/botonCronometro"
         android:onClick="cronometroAction"
         app:backgroundTint="@color/naranja"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/pause"
-        app:layout_constraintTop_toBottomOf="@+id/cronobody4"
+        app:layout_constraintTop_toBottomOf="@+id/cronobody"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/stop" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/pause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:contentDescription="@string/botonCronometro"
-        android:onClick="cronometroAction"
-        app:backgroundTint="@color/naranja"
-        app:layout_constraintEnd_toStartOf="@+id/stop"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/play"
-        app:layout_constraintTop_toBottomOf="@+id/cronobody4"
-        app:srcCompat="@drawable/pause" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

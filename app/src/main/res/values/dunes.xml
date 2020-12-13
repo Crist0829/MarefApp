@@ -2,5 +2,7 @@
 <resources>
 
     <dimen name="margen">16dp</dimen>
+    <dimen name="padding">16dp</dimen>
+
 
 </resources>

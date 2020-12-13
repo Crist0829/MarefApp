@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Catalogo"></activity>
+        <activity android:name=".volumenPozo"></activity>
+        <activity android:name=".Calculos" />
+        <activity android:name=".Settings" />
+        <activity android:name=".Catalogo" />
         <activity android:name=".Contacto" />
         <activity android:name=".Cronometro" />
         <activity

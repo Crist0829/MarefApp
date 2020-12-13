@@ -23,7 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/ic_logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -117,48 +117,43 @@
         app:layout_constraintBottom_toTopOf="@+id/layoutpie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
+            <ImageButton
                 android:id="@+id/cronometro"
                 style="@style/botones_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cron_metro" />
+                app:srcCompat="@drawable/cronometro" />
 
-            <Button
+
+            <ImageButton
                 android:id="@+id/calculos"
                 style="@style/botones_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="✍ CÁLCULOS  " />
 
-            <Button
+                app:srcCompat="@drawable/calculos" />
+
+            <ImageButton
                 android:id="@+id/catalogo"
                 style="@style/botones_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="☰ CATÁLOGO  " />
+                app:srcCompat="@drawable/catalogo" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/contacto"
                 style="@style/botones_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="✉ CONTACTO  " />
+                app:srcCompat="@drawable/contacto" />
 
-            <Button
-                android:id="@+id/settings"
-                style="@style/botones_int"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="⚙ SETTINGS  " />
         </LinearLayout>
 
     </ScrollView>
@@ -173,29 +168,26 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/pie_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="@dimen/margen"
-            android:padding="10dp" />
 
         <Button
-            android:id="@+id/pie_fav"
+            android:id="@+id/home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="@dimen/margen"
-            android:padding="10dp" />
-
+            android:layout_weight="1"
+            android:textColor="@color/gris"
+            android:text="HOME"
+            android:drawableTop="@drawable/home"
+            android:background="@color/fondo" />
         <Button
-            android:id="@+id/pie_settings"
+            android:id="@+id/settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="@dimen/margen"
-            android:padding="10dp" />
+            android:layout_weight="1"
+            android:textColor="@color/gris"
+            android:text="SETTINGS"
+            android:drawableTop="@drawable/settings"
+            android:background="@color/fondo"
+            />
 
     </LinearLayout>
 
