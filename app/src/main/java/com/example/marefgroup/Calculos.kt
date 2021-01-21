@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 
 class Calculos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,8 +43,13 @@ class Calculos : AppCompatActivity() {
     fun listeners(){
 
         val volumen : Button = findViewById(R.id.volumenPozo)
+        val volanular : Button = findViewById(R.id.volumenAnular)
+        val velocidadAnularLodo : Button= findViewById(R.id.velocidadAnularLodo)
+        val velocidadAnularAire : Button = findViewById(R.id.velocidadAnularAire)
+        val tiemporetorno : Button = findViewById(R.id.tiempoRetorno)
 
-        val bCalculos = listOf<View>(volumen)
+        val bCalculos = listOf<View>(volumen, volanular, velocidadAnularLodo, velocidadAnularAire, tiemporetorno)
+
 
         for (boton in bCalculos){
 
@@ -61,6 +67,35 @@ class Calculos : AppCompatActivity() {
 
                 val cambiar : Intent = Intent(this, volumenPozo::class.java)
                 startActivity(cambiar)
+            }
+
+            R.id.volumenAnular -> {
+
+                val cambiar : Intent = Intent(this, volumenAnular::class.java)
+                startActivity(cambiar)
+
+            }
+
+            R.id.velocidadAnularLodo -> {
+
+                val cambiar : Intent = Intent(this, velocidadAnularLodo::class.java)
+                startActivity(cambiar)
+
+            }
+
+            R.id.velocidadAnularAire -> {
+
+                val cambiar : Intent = Intent(this, velocidadAnularAire::class.java)
+                startActivity(cambiar)
+
+            }
+
+            R.id.tiempoRetorno -> {
+
+                val cambiar : Intent = Intent(this, tiempoRetorno::class.java)
+
+                startActivity(cambiar)
+
             }
 
 

@@ -89,10 +89,10 @@
                 android:fontFamily="@font/roboto_medium"
                 />
             <Button
-                android:id="@+id/velocidadAnular"
+                android:id="@+id/velocidadAnularLodo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="VELOCIDAD ANULAR"
+                android:text="VELOCIDAD ANULAR - LODO"
                 android:layout_marginLeft="@dimen/margen"
                 android:layout_marginRight="@dimen/margen"
                 android:layout_marginTop="@dimen/margen"
@@ -100,6 +100,20 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_medium"
                 />
+
+            <Button
+                android:id="@+id/velocidadAnularAire"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="VELOCIDAD ANULAR - AIRE"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+
             <Button
                 android:id="@+id/tiempoRetorno"
                 android:layout_width="match_parent"

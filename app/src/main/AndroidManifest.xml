@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".volumenPozo"></activity>
+        <activity android:name=".tiempoRetorno"></activity>
+        <activity android:name=".velocidadAnularLodo" />
+        <activity android:name=".velocidadAnularAire" />
+        <activity android:name=".velocidadAnular" />
+        <activity android:name=".volumenAnular" />
+        <activity android:name=".volumenPozo" />
         <activity android:name=".Calculos" />
         <activity android:name=".Settings" />
         <activity android:name=".Catalogo" />
