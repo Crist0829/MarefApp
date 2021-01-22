@@ -15,8 +15,6 @@ class velocidadAnularAire : AppCompatActivity() {
         setContentView(R.layout.activity_velocidad_anular_aire)
 
         val backButton : Button = findViewById(R.id.backButton)
-        val homeButton : Button = findViewById(R.id.home)
-        val settingsButton : Button = findViewById(R.id.settings)
 
         backButton.setOnClickListener{
 

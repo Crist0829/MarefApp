@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".tiempoRetorno"></activity>
+        <activity android:name=".caudalBombaDuplex"></activity>
+        <activity android:name=".volumenTanqueCilindrico" />
+        <activity android:name=".volumenTanqueRectangular" />
+        <activity android:name=".porcentajeSolidos" />
+        <activity android:name=".reduccionPorcentajeSolidos" />
+        <activity android:name=".tiempoRetorno" />
         <activity android:name=".velocidadAnularLodo" />
         <activity android:name=".velocidadAnularAire" />
         <activity android:name=".velocidadAnular" />

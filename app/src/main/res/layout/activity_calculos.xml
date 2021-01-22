@@ -139,10 +139,10 @@
                 android:fontFamily="@font/roboto_medium"
                 />
             <Button
-                android:id="@+id/volumenTanque"
+                android:id="@+id/volumenTanqueRectangular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="VOLUMEN DE TANQUE"
+                android:text="VOLUMEN DE TANQUE - TANQUE RECTANGULAR"
                 android:layout_marginLeft="@dimen/margen"
                 android:layout_marginRight="@dimen/margen"
                 android:layout_marginTop="@dimen/margen"
@@ -150,11 +150,12 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_medium"
                 />
+
             <Button
-                android:id="@+id/caudalBomba"
+                android:id="@+id/volumenTanqueCilindro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CAUDAL DE BOMBA"
+                android:text="VOLUMEN DE TANQUE - TANQUE CILINDRICO"
                 android:layout_marginLeft="@dimen/margen"
                 android:layout_marginRight="@dimen/margen"
                 android:layout_marginTop="@dimen/margen"
@@ -162,6 +163,33 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_medium"
                 />
+
+            <Button
+                android:id="@+id/caudalBombaBD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CAUDAL DE BOMBA - BOMBA DÚPLEX"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+
+            <Button
+                android:id="@+id/caudalBombaBT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CAUDAL DE BOMBA - BOMBA TRIPLEX"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+
             <Button
                 android:id="@+id/reduccionSolidos"
                 android:layout_width="match_parent"

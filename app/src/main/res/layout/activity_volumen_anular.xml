@@ -198,7 +198,7 @@
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:hint="M"
+                    android:hint="m"
                     android:ems="6"
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
@@ -213,7 +213,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_weight="1"
-                    android:hint="ft"
+                    android:hint="pie"
                     android:layout_marginTop="0dp"
                     android:ems="6"
                     android:inputType="numberDecimal"
@@ -426,27 +426,6 @@
         app:layout_constraintTop_toBottomOf="@+id/Scroll"
         app:layout_constraintVertical_bias="1.0"
         android:background="@color/subfondo">
-
-        <Button
-            android:id="@+id/home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/gris"
-            android:text="HOME"
-            android:drawableTop="@drawable/home"
-            android:background="@color/fondo" />
-        <Button
-            android:id="@+id/settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/gris"
-            android:text="SETTINGS"
-            android:drawableTop="@drawable/settings"
-            android:background="@color/fondo"
-            />
-
     </LinearLayout>
 
 

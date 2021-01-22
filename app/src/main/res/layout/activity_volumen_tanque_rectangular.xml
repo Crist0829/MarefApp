@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/titulo"
         style="@style/titulos"
-        android:text="VELOCIDAD ANULAR - AIRE"
+        android:text="VOLUMEN DE TANQUE- TANQUE RECTANGULAR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diámetro del pozo: "
+                android:text="longitud: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -86,13 +86,13 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/diametroPozo"
+                    android:id="@+id/longitudM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:hint="mm"
+                    android:hint="m"
                     android:ems="6"
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
@@ -102,12 +102,12 @@
                     android:textCursorDrawable="@color/black"/>
 
                 <EditText
-                    android:id="@+id/diametroPozoI"
+                    android:id="@+id/longitudI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_weight="1"
-                    android:hint="pul"
+                    android:hint="pie"
                     android:layout_marginTop="0dp"
                     android:ems="6"
                     android:inputType="numberDecimal"
@@ -122,7 +122,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diámetro de tubería: "
+                android:text="Ancho: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -139,13 +139,13 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/diametroTuberia"
+                    android:id="@+id/anchoM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:hint="mm"
+                    android:hint="m"
                     android:ems="6"
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
@@ -155,12 +155,12 @@
                     android:textCursorDrawable="@color/black" />
 
                 <EditText
-                    android:id="@+id/diametroTuberiaI"
+                    android:id="@+id/anchoI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_weight="1"
-                    android:hint="pul"
+                    android:hint="pie"
                     android:layout_marginTop="0dp"
                     android:ems="6"
                     android:inputType="numberDecimal"
@@ -175,7 +175,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Caudal de la bomba: "
+                android:text="Profundidad: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -192,13 +192,13 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/caudalbombam"
+                    android:id="@+id/profundidadM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:hint="L/min"
+                    android:hint="m"
                     android:ems="6"
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
@@ -208,12 +208,12 @@
                     android:textCursorDrawable="@color/black" />
 
                 <EditText
-                    android:id="@+id/caudalbombaI"
+                    android:id="@+id/profundidadI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_weight="1"
-                    android:hint="gal/min"
+                    android:hint="pie"
                     android:layout_marginTop="0dp"
                     android:ems="6"
                     android:inputType="numberDecimal"
@@ -262,40 +262,41 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margen"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="VELOCIDAD ANULAR: "
+                    android:text="VOLUMEN: "
                     android:textColor="@color/black"
                     android:textSize="18dp" />
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_gravity="start">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margen"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginBottom="4dp"
                         android:fontFamily="@font/roboto"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginRight="0dp"
                         android:text="MÉTRICO:"
                         android:textColor="@color/black"
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/velocidadanularmetrico"
+                        android:id="@+id/volumenMetrico"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/naranja"
                         android:layout_margin="@dimen/margen"
                         android:layout_marginLeft="0dp"
                         android:text=""
-                        android:textColor="@color/naranja"
-                        android:visibility="visible" />
+                        android:visibility="visible"/>
+
 
 
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -312,7 +313,7 @@
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/velocidadanularimp"
+                        android:id="@+id/volumenImp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/naranja"
@@ -322,26 +323,12 @@
                         android:visibility="visible"/>
 
 
-
-
                 </LinearLayout>
 
 
             </LinearLayout>
 
-
-
-
-
-
-
-
         </LinearLayout>
-
-
-
-
-
 
     </ScrollView>
 
@@ -356,7 +343,6 @@
         app:layout_constraintTop_toBottomOf="@+id/Scroll"
         app:layout_constraintVertical_bias="1.0"
         android:background="@color/subfondo">
-
     </LinearLayout>
 
 

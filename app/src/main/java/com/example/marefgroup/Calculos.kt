@@ -47,8 +47,15 @@ class Calculos : AppCompatActivity() {
         val velocidadAnularLodo : Button= findViewById(R.id.velocidadAnularLodo)
         val velocidadAnularAire : Button = findViewById(R.id.velocidadAnularAire)
         val tiemporetorno : Button = findViewById(R.id.tiempoRetorno)
+        val porcentajesolidos : Button = findViewById(R.id.porcentajeSolidos)
+        val volumentanquerect : Button = findViewById(R.id.volumenTanqueRectangular)
+        val volumentanquecilindro : Button = findViewById(R.id.volumenTanqueCilindro)
+        val caudalbombaduplex : Button = findViewById(R.id.caudalBombaBD)
 
-        val bCalculos = listOf<View>(volumen, volanular, velocidadAnularLodo, velocidadAnularAire, tiemporetorno)
+
+        val bCalculos = listOf<View>(volumen, volanular, velocidadAnularLodo, velocidadAnularAire, tiemporetorno,
+                                    porcentajesolidos, volumentanquerect, volumentanquecilindro, caudalbombaduplex,
+                                    )
 
 
         for (boton in bCalculos){
@@ -97,6 +104,31 @@ class Calculos : AppCompatActivity() {
                 startActivity(cambiar)
 
             }
+
+            R.id.porcentajeSolidos -> {
+
+                val cambiar : Intent = Intent(this, porcentajeSolidos::class.java)
+
+                startActivity(cambiar)
+
+            }
+
+            R.id.volumenTanqueRectangular -> {
+
+                val cambiar : Intent = Intent(this, volumenTanqueRectangular::class.java)
+
+                startActivity(cambiar)
+
+            }
+
+            R.id.volumenTanqueCilindro -> {
+
+                val cambiar : Intent = Intent(this, volumenTanqueCilindrico::class.java)
+
+                startActivity(cambiar)
+
+            }
+
 
 
 
