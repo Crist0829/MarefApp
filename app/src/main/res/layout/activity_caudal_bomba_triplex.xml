@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/titulo"
         style="@style/titulos"
-        android:text="VELOCIDAD ANULAR - AIRE"
+        android:text="CAUDAL DE LA BOMBA - BOMBA TRIPLEX"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diámetro del pozo: "
+                android:text="Diámetro de camisa: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -86,7 +86,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/diametroPozo"
+                    android:id="@+id/diametroCamisaM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
@@ -102,7 +102,7 @@
                     android:textCursorDrawable="@color/black"/>
 
                 <EditText
-                    android:id="@+id/diametroPozoI"
+                    android:id="@+id/diametroCamisaI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
@@ -119,10 +119,11 @@
 
             </LinearLayout>
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diámetro de tubería: "
+                android:text="Longitud de la embolada: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -139,7 +140,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/diametroTuberia"
+                    android:id="@+id/emboladaM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
@@ -155,7 +156,7 @@
                     android:textCursorDrawable="@color/black" />
 
                 <EditText
-                    android:id="@+id/diametroTuberiaI"
+                    android:id="@+id/emboladaI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
@@ -175,7 +176,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Caudal de la bomba: "
+                android:text="Eficiencia de la bomba (%): "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -183,47 +184,55 @@
                 android:layout_gravity="center_horizontal"
                 />
 
-            <LinearLayout
+            <EditText
+                android:id="@+id/eficiencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_weight="1"
+                android:hint="pul"
+                android:layout_marginTop="0dp"
+                android:ems="6"
+                android:inputType="numberDecimal"
+                android:textColor="@color/naranja"
+                android:textColorHighlight="@color/black"
+                android:textAlignment="center"
+                android:textColorHint="@color/gris"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/black"
+                android:gravity="center_horizontal" />
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
+                android:text="Tiempo embolada: "
+                style="@style/textoContent"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <EditText
+                android:id="@+id/tiempoEmbolada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_weight="1"
+                android:hint="emb/min"
                 android:layout_marginTop="0dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:ems="6"
+                android:inputType="numberDecimal"
+                android:textColor="@color/naranja"
+                android:textColorHighlight="@color/black"
+                android:textAlignment="center"
+                android:textColorHint="@color/gris"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/black"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margen"/>
 
-                <EditText
-                    android:id="@+id/caudalbombam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:ems="6"
-                    android:hint="m³/min"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
 
-                <EditText
-                    android:id="@+id/caudalbombaI"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_weight="1"
-                    android:hint="pie³/min"
-                    android:layout_marginTop="0dp"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
-
-            </LinearLayout>
 
             <Button
                 android:id="@+id/calcular"
@@ -262,7 +271,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margen"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="VELOCIDAD ANULAR: "
+                    android:text="CAUDAL DE LA BOMBA: "
                     android:textColor="@color/black"
                     android:textSize="18dp" />
 
@@ -285,7 +294,7 @@
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/velocidadanularmetrico"
+                        android:id="@+id/caudalbombametrico"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margen"
@@ -312,7 +321,7 @@
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/velocidadanularimp"
+                        android:id="@+id/caudalbombaImp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/naranja"

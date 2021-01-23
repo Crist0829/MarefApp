@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".caudalBombaDuplex"></activity>
+        <activity android:name=".densificacionBarita"></activity>
+        <activity android:name=".reduccionVolcado" />
+        <activity android:name=".reduccionDisolucion" />
+        <activity android:name=".caudalBombaTriplex" />
+        <activity android:name=".caudalBombaDuplex" />
         <activity android:name=".volumenTanqueCilindrico" />
         <activity android:name=".volumenTanqueRectangular" />
         <activity android:name=".porcentajeSolidos" />

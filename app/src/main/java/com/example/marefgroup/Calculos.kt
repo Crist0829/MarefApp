@@ -1,10 +1,12 @@
 package com.example.marefgroup
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class Calculos : AppCompatActivity() {
@@ -51,10 +53,15 @@ class Calculos : AppCompatActivity() {
         val volumentanquerect : Button = findViewById(R.id.volumenTanqueRectangular)
         val volumentanquecilindro : Button = findViewById(R.id.volumenTanqueCilindro)
         val caudalbombaduplex : Button = findViewById(R.id.caudalBombaBD)
+        val caudalbombatriplex : Button = findViewById(R.id.caudalBombaBT)
+        val reduccionsolidosdiso : Button = findViewById(R.id.reduccionSolidosDisolucion)
+        val reduccionsolidosvol : Button = findViewById(R.id.reduccionSolidosVolcado)
+        val densificacionbarita : Button = findViewById(R.id.densificacionBarita)
 
 
         val bCalculos = listOf<View>(volumen, volanular, velocidadAnularLodo, velocidadAnularAire, tiemporetorno,
                                     porcentajesolidos, volumentanquerect, volumentanquecilindro, caudalbombaduplex,
+                                    caudalbombatriplex, reduccionsolidosdiso, reduccionsolidosvol, densificacionbarita,
                                     )
 
 
@@ -128,6 +135,50 @@ class Calculos : AppCompatActivity() {
                 startActivity(cambiar)
 
             }
+
+            R.id.caudalBombaBD -> {
+
+                val cambiar : Intent = Intent(this, caudalBombaDuplex::class.java)
+
+                startActivity(cambiar)
+
+            }
+
+            R.id.caudalBombaBT -> {
+
+                val cambiar : Intent = Intent(this, caudalBombaTriplex::class.java)
+
+                startActivity(cambiar)
+
+            }
+
+            R.id.reduccionSolidosDisolucion -> {
+
+                val cambiar : Intent = Intent(this, reduccionDisolucion::class.java)
+
+                startActivity(cambiar)
+
+            }
+
+            R.id.reduccionSolidosVolcado -> {
+
+                val cambiar : Intent = Intent(this, reduccionVolcado::class.java)
+
+                startActivity(cambiar)
+
+            }
+
+            R.id.densificacionBarita -> {
+
+                val cambiar : Intent = Intent(this, densificacionBarita::class.java)
+
+                startActivity(cambiar)
+
+
+
+            }
+
+
 
 
 

@@ -95,7 +95,6 @@ class volumenAnular : AppCompatActivity() {
         }
 
 
-
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{

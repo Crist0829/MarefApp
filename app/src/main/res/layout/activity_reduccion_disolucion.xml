@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/titulo"
         style="@style/titulos"
-        android:text="VELOCIDAD ANULAR - AIRE"
+        android:text="REDUCCIÓN % DE SÓLIDOS - POR DISOLUCIÓN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diámetro del pozo: "
+                android:text="Volumen total: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -86,13 +86,13 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/diametroPozo"
+                    android:id="@+id/volumenTotalM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_marginTop="0dp"
                     android:layout_weight="1"
-                    android:hint="mm"
+                    android:hint="L"
                     android:ems="6"
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
@@ -102,12 +102,12 @@
                     android:textCursorDrawable="@color/black"/>
 
                 <EditText
-                    android:id="@+id/diametroPozoI"
+                    android:id="@+id/volumenTotalI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_weight="1"
-                    android:hint="pul"
+                    android:hint="bbl"
                     android:layout_marginTop="0dp"
                     android:ems="6"
                     android:inputType="numberDecimal"
@@ -122,7 +122,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diámetro de tubería: "
+                android:text="Sólidos totales: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -130,52 +130,29 @@
                 android:layout_gravity="center_horizontal"
                 />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/solidostotales"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margen"
-                android:layout_marginTop="0dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:hint="%"
+                android:ems="6"
+                android:inputType="numberDecimal"
+                android:textColor="@color/naranja"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/gris"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/black"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
 
-                <EditText
-                    android:id="@+id/diametroTuberia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:hint="mm"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
 
-                <EditText
-                    android:id="@+id/diametroTuberiaI"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_weight="1"
-                    android:hint="pul"
-                    android:layout_marginTop="0dp"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
-
-            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Caudal de la bomba: "
+                android:text="Sólidos deseados: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -183,47 +160,22 @@
                 android:layout_gravity="center_horizontal"
                 />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/solidosdeseados"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margen"
-                android:layout_marginTop="0dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/caudalbombam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:ems="6"
-                    android:hint="m³/min"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
-
-                <EditText
-                    android:id="@+id/caudalbombaI"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_weight="1"
-                    android:hint="pie³/min"
-                    android:layout_marginTop="0dp"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
-
-            </LinearLayout>
+                android:layout_weight="1"
+                android:hint="%"
+                android:ems="6"
+                android:inputType="numberDecimal"
+                android:textColor="@color/naranja"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/gris"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/black"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
 
             <Button
                 android:id="@+id/calcular"
@@ -262,7 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margen"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="VELOCIDAD ANULAR: "
+                    android:text="VOLUMEN PARA AGREGAR: "
                     android:textColor="@color/black"
                     android:textSize="18dp" />
 
@@ -285,7 +237,7 @@
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/velocidadanularmetrico"
+                        android:id="@+id/volumenAgregarM"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margen"
@@ -312,7 +264,7 @@
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/velocidadanularimp"
+                        android:id="@+id/volumenAgregarImp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/naranja"
@@ -322,26 +274,13 @@
                         android:visibility="visible"/>
 
 
-
-
                 </LinearLayout>
 
 
             </LinearLayout>
 
 
-
-
-
-
-
-
         </LinearLayout>
-
-
-
-
-
 
     </ScrollView>
 

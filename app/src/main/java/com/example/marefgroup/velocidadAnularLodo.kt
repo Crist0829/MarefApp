@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import org.w3c.dom.Text
+import java.lang.Exception
 import java.math.RoundingMode
 
 class velocidadAnularLodo : AppCompatActivity() {
@@ -16,8 +17,6 @@ class velocidadAnularLodo : AppCompatActivity() {
         setContentView(R.layout.activity_velocidad_anular_lodo)
 
         val backButton : Button = findViewById(R.id.backButton)
-        val homeButton : Button = findViewById(R.id.home)
-        val settingsButton : Button = findViewById(R.id.settings)
 
         backButton.setOnClickListener{
 
@@ -104,9 +103,6 @@ class velocidadAnularLodo : AppCompatActivity() {
         }
 
 
-
-
-
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
@@ -139,18 +135,25 @@ class velocidadAnularLodo : AppCompatActivity() {
             }else{
 
 
-                var DPM = extractor(auxDPM, auxDPI)
-                var DTM = extractor(auxDTM, auxDTI)
-                var CB = extractorP(auxCB, auxCBI)
-                val const : Double = 1270.0
+                try {
 
-                val velocidadanular : Double = redondear((const * CB) / ((DPM * DPM) - (DTM * DTM)), 3)
-                val velocidadanularMetrico : TextView = findViewById(R.id.velocidadanularmetrico)
-                val velocidadanularImp : TextView = findViewById(R.id.velocidadanularimp)
+                    var DPM = extractor(auxDPM, auxDPI)
+                    var DTM = extractor(auxDTM, auxDTI)
+                    var CB = extractorP(auxCB, auxCBI)
+                    val const : Double = 1270.0
 
-                velocidadanularMetrico.text = "m/min = " + redondear(velocidadanular, 3).toString()
-                velocidadanularImp.text = "Pie(ft) = " +  redondear((velocidadanular / 0.3048), 3).toString()
+                    val velocidadanular : Double = redondear((const * CB) / ((DPM * DPM) - (DTM * DTM)), 3)
+                    val velocidadanularMetrico : TextView = findViewById(R.id.velocidadanularmetrico)
+                    val velocidadanularImp : TextView = findViewById(R.id.velocidadanularimp)
 
+                    velocidadanularMetrico.text = "m/min = " + redondear(velocidadanular, 3).toString()
+                    velocidadanularImp.text = "Pie(ft) = " +  redondear((velocidadanular / 0.3048), 3).toString()
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
 
 
             }

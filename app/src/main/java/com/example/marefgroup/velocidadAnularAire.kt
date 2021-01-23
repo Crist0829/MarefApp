@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 import java.math.RoundingMode
 
 class velocidadAnularAire : AppCompatActivity() {
@@ -133,21 +134,31 @@ class velocidadAnularAire : AppCompatActivity() {
 
                 Toast.makeText(this, "Por favor, para cada medida llenar un campo", Toast.LENGTH_SHORT).show()
 
-            }else{
+
+            }
+            else{
+
+                try {
+
+                    var DPM = extractor(auxDPM, auxDPI)
+                    var DTM = extractor(auxDTM, auxDTI)
+                    var CB = extractorP(auxCB, auxCBI)
+                    val const : Double = 1273000.0
+
+                    val velocidadanular : Double = redondear((const / ((DPM * DPM) - (DTM * DTM)) * CB), 3)
+                    val velocidadanularMetrico : TextView = findViewById(R.id.velocidadanularmetrico)
+                    val velocidadanularImp : TextView = findViewById(R.id.velocidadanularimp)
+
+                    velocidadanularMetrico.text = "m/min = " + redondear(velocidadanular, 3).toString()
+                    velocidadanularImp.text = "Pie(ft) = " +  redondear((velocidadanular / 0.3048), 3).toString()
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
 
 
-
-                var DPM = extractor(auxDPM, auxDPI)
-                var DTM = extractor(auxDTM, auxDTI)
-                var CB = extractorP(auxCB, auxCBI)
-                val const : Double = 1273000.0
-
-                val velocidadanular : Double = redondear((const / ((DPM * DPM) - (DTM * DTM)) * CB), 3)
-                val velocidadanularMetrico : TextView = findViewById(R.id.velocidadanularmetrico)
-                val velocidadanularImp : TextView = findViewById(R.id.velocidadanularimp)
-
-                velocidadanularMetrico.text = "m/min = " + redondear(velocidadanular, 3).toString()
-                velocidadanularImp.text = "Pie(ft) = " +  redondear((velocidadanular / 0.3048), 3).toString()
 
 
 

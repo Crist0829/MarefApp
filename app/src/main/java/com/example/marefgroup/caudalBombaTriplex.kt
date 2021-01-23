@@ -9,10 +9,10 @@ import android.widget.TextView
 import android.widget.Toast
 import java.math.RoundingMode
 
-class caudalBombaDuplex : AppCompatActivity() {
+class caudalBombaTriplex : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_caudal_bomba_duplex)
+        setContentView(R.layout.activity_caudal_bomba_triplex)
 
         val backButton : Button = findViewById(R.id.backButton)
 
@@ -89,8 +89,6 @@ class caudalBombaDuplex : AppCompatActivity() {
             val EditDCM : EditText = findViewById(R.id.diametroCamisaM) // Diametro de camisa métrico
             val EditDCI : EditText = findViewById(R.id.diametroCamisaI)// Diametro de camisa imperial
 
-            val EditLongM : EditText = findViewById(R.id.longitudVM) // Longitud del vástago métrico
-            val EditLongI : EditText = findViewById(R.id.longitudVI)// Longitud del vástago imperial
 
             val EditLongEM  : EditText = findViewById(R.id.emboladaM) // Longitud de la embolada métrico
             val EditLongEI : EditText = findViewById(R.id.emboladaI)// Longitud de la embolada imperial
@@ -103,8 +101,6 @@ class caudalBombaDuplex : AppCompatActivity() {
             val auxDCM = EditDCM.text.toString()
             val auxDCI = EditDCI.text.toString()
 
-            val auxLongM = EditLongM.text.toString()
-            val auxLongI = EditLongI.text.toString()
 
             val auxLongEM = EditLongEM.text.toString()
             val auxLongEI = EditLongEI.text.toString()
@@ -115,28 +111,26 @@ class caudalBombaDuplex : AppCompatActivity() {
 
 
 
-            if(validacion(auxDCM, auxDCI) == 1 || validacion(auxLongM, auxLongI) == 1 || validacion(auxLongEM, auxLongEI) == 1||auxEfi.equals("")||auxTiempo.equals("")){
+            if(validacion(auxDCM, auxDCI) == 1 ||validacion(auxLongEM, auxLongEI) == 1||auxEfi.equals("")||auxTiempo.equals("")){
 
                 Toast.makeText(this, "Por favor, para cada medida llenar un campo", Toast.LENGTH_SHORT).show()
 
             }else{
 
                 var DCM = extractor(auxDCM, auxDCI)
-                var LongM = extractor(auxLongM, auxLongI)
                 var LongEM = extractor(auxLongEM, auxLongEI)
                 var EFI = auxEfi.toDouble()
                 var TIEMPO = auxTiempo.toDouble()
-                val const : Double = 0.000068
+                val const : Double = 0.000102101
 
                 val caudalBombaMetrico : TextView = findViewById(R.id.caudalbombametrico)
                 val caudalBombaImp : TextView = findViewById(R.id.caudalbombaImp)
 
-                val auxCaudalImperial = redondear((const * (2*((DCM / 25.39) * (DCM / 25.39)) - ((LongM / 25.39) * (LongM / 25.39)))*(LongEM / 25.39) * EFI * TIEMPO), 3)
+                val auxCaudalImperialGal = redondear((const*((DCM/25.39) * (DCM/25.39))*(LongEM/25.39) * EFI * TIEMPO), 3)
 
-                val auxCaudalMetrico = redondear(auxCaudalImperial*3.7585, 3)
-
-                caudalBombaMetrico.text = "L/min = " + auxCaudalMetrico.toString() + "   L/Embolada = " + (auxCaudalMetrico/TIEMPO).toString()
-                caudalBombaImp.text = "Gal/min = " + auxCaudalImperial.toString() + "  Gal/Embolada = " + redondear((auxCaudalImperial/TIEMPO), 3).toString()
+                val auxCaudalMetrico = redondear((auxCaudalImperialGal*3.785), 3)
+                caudalBombaMetrico.text = "L/min = " + auxCaudalMetrico.toString() + "   L/embolada = " + redondear((auxCaudalMetrico/TIEMPO), 3)
+                caudalBombaImp.text = "gal/min = " + auxCaudalImperialGal.toString() + "   gal/embolada = " + redondear((auxCaudalImperialGal / TIEMPO), 3).toString()
 
 
             }

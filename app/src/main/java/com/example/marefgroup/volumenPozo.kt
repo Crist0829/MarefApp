@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.lang.Exception
 import java.math.RoundingMode
 import kotlin.math.round
 
@@ -16,103 +17,146 @@ class volumenPozo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_volumen_pozo)
 
+
+
         val backButton : Button = findViewById(R.id.backButton)
-        val homeButton : Button = findViewById(R.id.home)
-        val settingsButton : Button = findViewById(R.id.settings)
-
-        settingsButton.setOnClickListener{
-
-            val setting : Intent = Intent(this, Settings::class.java)
-            startActivity(setting)
-
-        }
-
-        homeButton.setOnClickListener{
-
-            val home : Intent = Intent(this, MainActivity::class.java)
-            startActivity(home)
-
-        }
 
         backButton.setOnClickListener{
 
-            val home : Intent = Intent(this, Calculos::class.java)
-            startActivity(home)
+            val back : Intent = Intent(this, Calculos::class.java)
+            startActivity(back)
 
         }
 
-        val calcular : Button = findViewById(R.id.calcular)
+        fun validacion(a : String, b : String): Int{
 
-        calcular.setOnClickListener{
+            var cont : Int = 0
 
-            val diametro : EditText = findViewById(R.id.diametro)
-            val longitud : EditText = findViewById(R.id.longitud)
+            if(a.equals("") && b.equals("")){
 
-            val auxD = diametro.text.toString()
-            val auxL = longitud.text.toString()
 
-            if(auxD.equals("") || auxL.equals("")){
-
-                Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show()
+                cont ++
+                return cont
 
             }else{
 
-                var dm = diametro.text.toString().toFloat()
-                var lp = longitud.text.toString().toFloat()
+                if(a.isNotBlank() && b.isNotEmpty()){
 
-                val constante = 0.7854;
-                val resultado : Double = round3Decimales (constante*((dm/1000)*(dm/1000))*lp*1000, 3)
-                var longitudPozo =  round3Decimales(resultado/lp, 3)
-                val resultado1 = findViewById<TextView>(R.id.resultado1)
-                val longitudpPozo2 = round3Decimales(longitudPozo/1000, 3)
-                resultado1.text = "L/m = " + longitudPozo.toString() + "   m3/m = " + longitudpPozo2.toString()
-                val resultado2 = findViewById<TextView>(R.id.resultado2)
+                    cont ++
+                    return cont
 
-                val m3 = round3Decimales(resultado/1000, 3)
+                }else{
 
-                resultado2.text = "L = " + resultado.toString() + "   m3 = " + m3.toString()
+                    return cont
 
-                val resultado1Imp = findViewById<TextView>(R.id.resultado1Imp)
-                val resultado2Imp = findViewById<TextView>(R.id.resultado2Imp)
+                }
 
+            }
 
+        }
 
-                val resultadoImp1 =  round3Decimales(resultado * 0.264172, 5)
-                val resultadoImp2 = round3Decimales(m3 * 6.29, 3)
+        /*---Esta función extrae de el numero que fue escrito y si fue en el sistema imperial
+         *devuelve el número convertido en métrico---*/
+        fun extractor(a : String, b : String): Double{
 
-                val lpI = round3Decimales(lp / 0.3048, 5)
+            if(a.equals("")){
 
-                val resultado1Imp1 = round3Decimales(resultadoImp1 / lpI, 3)
-                val resultado1Imp2 = round3Decimales(resultadoImp2 / lpI, 3)
+                var axub = b.toDouble() * 25.39
+                return axub
 
-                resultado1Imp.text = "Gal/pie(ft) = " + resultado1Imp1.toString() + "   bbl/pie(ft) = " + resultado1Imp2.toString()
+            }else{
 
-                resultado2Imp.text = "gal = " + resultadoImp1.toString() + "   bbl = " + resultadoImp2.toString()
+                return a.toDouble()
+            }
 
+        }
 
+        /*--------------------------------------------------*/
 
-                resultado1.visibility = View.VISIBLE
-                resultado2.visibility = View.VISIBLE
-                resultado2Imp.visibility = View.VISIBLE
-                resultado1Imp.visibility = View.VISIBLE
-                
+        /*Hace lo mismo que la función anterior pero aplicando la forma para pasar
+        * de pies a metros*/
+        fun extractorP(a : String, b : String): Double{
 
+            if(a.equals("")){
 
+                var axub = b.toDouble() / 3.28084
+                return axub
 
+            }else{
+
+                return a.toDouble()
             }
 
 
         }
 
+        /* Devuelve el numero decimal redondeado */
+        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
+
+            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
+
+        }
+
+
+
+        val calcular : Button = findViewById(R.id.calcular)
+
+        calcular.setOnClickListener{
+
+
+            val EditDPM : EditText = findViewById(R.id.diametroPozoM)// Diametro del pozo métrico
+            val EditDPI : EditText = findViewById(R.id.diametroPozoI)// Diametro del pozo en imperial
+
+            val EditLM  : EditText = findViewById(R.id.longitudM)//Longitud del pozo métrico
+            val EditLI : EditText = findViewById(R.id.longitudI)//Longitud del pozo imperial
+
+
+            /*Variables auxiliares para hacer los condicionales*/
+            val auxDPM = EditDPM.text.toString()
+            val auxDPI = EditDPI.text.toString()
+
+            val auxLM = EditLM.text.toString()
+            val auxLI = EditLI.text.toString()
+
+            if(validacion(auxDPM, auxDPI) == 1 || validacion(auxLM, auxLI) == 1){
+
+                Toast.makeText(this, "Por favor, para cada medida llenar un campo", Toast.LENGTH_SHORT).show()
+
+            }else{
+
+                try {
+                    var DP = extractor(auxDPM, auxDPI)
+                    var Lon = extractorP(auxLM, auxLI)
+                    val const : Double = 0.7854
+
+                    val volumenPozoM : TextView = findViewById(R.id.volumenPozoM)
+                    val volumenPozoI : TextView = findViewById(R.id.volumenPozoImp)
+
+                    val auxVolumenPozoM = redondear(const * ((DP/1000)*(DP/1000)) * Lon * 1000, 3)
+                    val auxVolumenPozoI = redondear(auxVolumenPozoM*0.264172, 3)
+
+                    volumenPozoM.text = "L = " + auxVolumenPozoM.toString() + "  m³/m = " + redondear((auxVolumenPozoM / 1000), 3).toString()
+                    volumenPozoI.text = "gal = " + auxVolumenPozoI.toString() + "  bbl/pie(ft) = " + redondear(((auxVolumenPozoM/1000)*6.29), 3).toString()
+
+
+                    val capacidadPozoM : TextView = findViewById(R.id.capacidadPozoM)
+                    val capacidadPozoI : TextView = findViewById(R.id.capacidadPozoImp)
+
+                    val auxCapacidadPozoM = redondear(auxVolumenPozoM/Lon, 3)
+                    val auxCapacidadPozoI = redondear(auxVolumenPozoI / (Lon/0.3048), 3)
+
+                    capacidadPozoM.text = "L/m = " + auxCapacidadPozoM.toString() + "  m ³ = " +  redondear((auxCapacidadPozoM/1000), 3).toString()
+                    capacidadPozoI.text = "gal/pie(ft) = " + auxCapacidadPozoI.toString() + "  bbl/pie(ft) = " + redondear(((auxVolumenPozoM / 1000)*6.29)/(Lon/0.3048), 3).toString()
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
+            }
+
+        }
     }
-
-    fun round3Decimales(number : Double, numDecimalesPlaces: Int): Double {
-
-        return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
-
-    }
-
-
 }
 
 

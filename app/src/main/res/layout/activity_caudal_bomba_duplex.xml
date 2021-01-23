@@ -1,9 +1,424 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".caudalBombaDuplex">
+    android:background="@color/fondo"
+    tools:context=".Cronometro">
+
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/baseline_arrow_back_black_18dp"
+        android:backgroundTint="@color/naranja"
+        android:contentDescription="@string/backButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margen"
+        android:contentDescription="@string/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo"
+        android:background="@color/beige"/>
+
+
+    <TextView
+        android:id="@+id/titulo"
+        style="@style/titulos"
+        android:text="CAUDAL DE LA BOMBA - BOMBA DÚPLEX"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <ScrollView
+        android:id="@+id/Scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        app:layout_constraintVertical_bias="0.97">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="vertical"
+            android:background="@color/gris_claro">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diámetro de camisa: "
+                style="@style/textoContent"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/diametroCamisaM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:hint="mm"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black"/>
+
+                <EditText
+                    android:id="@+id/diametroCamisaI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_weight="1"
+                    android:hint="pul"
+                    android:layout_marginTop="0dp"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Longitud del vástago: "
+                style="@style/textoContent"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/longitudVM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:hint="mm"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+                <EditText
+                    android:id="@+id/longitudVI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_weight="1"
+                    android:hint="pul"
+                    android:layout_marginTop="0dp"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Longitud de la embolada: "
+                style="@style/textoContent"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/emboladaM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:hint="mm"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+                <EditText
+                    android:id="@+id/emboladaI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_weight="1"
+                    android:hint="pul"
+                    android:layout_marginTop="0dp"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eficiencia de la bomba (%): "
+                style="@style/textoContent"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <EditText
+                android:id="@+id/eficiencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_weight="1"
+                android:hint="pul"
+                android:layout_marginTop="0dp"
+                android:ems="6"
+                android:inputType="numberDecimal"
+                android:textColor="@color/naranja"
+                android:textColorHighlight="@color/black"
+                android:textAlignment="center"
+                android:textColorHint="@color/gris"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/black"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiempo embolada: "
+                style="@style/textoContent"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <EditText
+                android:id="@+id/tiempoEmbolada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_weight="1"
+                android:hint="emb/min"
+                android:layout_marginTop="0dp"
+                android:ems="6"
+                android:inputType="numberDecimal"
+                android:textColor="@color/naranja"
+                android:textColorHighlight="@color/black"
+                android:textAlignment="center"
+                android:textColorHint="@color/gris"
+                android:textColorLink="@color/black"
+                android:textCursorDrawable="@color/black"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margen"/>
+
+
+
+            <Button
+                android:id="@+id/calcular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen"
+                android:padding="@dimen/padding"
+                android:text="@string/calcular"
+                android:textColor="@color/black"
+                android:background="@color/white"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen"
+                android:fontFamily="@font/roboto_black"
+                android:layout_marginTop="@dimen/margen"
+                android:text="RESULTADOS:"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margen"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="CAUDAL DE LA BOMBA: "
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margen"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="MÉTRICO:"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/caudalbombametrico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margen"
+                        android:layout_marginLeft="0dp"
+                        android:text=""
+                        android:textColor="@color/naranja"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margen"
+                        android:fontFamily="@font/roboto"
+                        android:text="IMPERIAL:"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/caudalbombaImp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/naranja"
+                        android:layout_margin="@dimen/margen"
+                        android:layout_marginLeft="0dp"
+                        android:text=""
+                        android:visibility="visible"/>
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Scroll"
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@color/subfondo">
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

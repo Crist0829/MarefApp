@@ -191,10 +191,10 @@
                 />
 
             <Button
-                android:id="@+id/reduccionSolidos"
+                android:id="@+id/reduccionSolidosDisolucion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="REDUCCIÓN DE % DE SÓLIDOS"
+                android:text="REDUCCIÓN % DE SÓLIDOS - DISOLUCIÓN"
                 android:layout_marginLeft="@dimen/margen"
                 android:layout_marginRight="@dimen/margen"
                 android:layout_marginTop="@dimen/margen"
@@ -202,6 +202,21 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/roboto_medium"
                 />
+
+            <Button
+                android:id="@+id/reduccionSolidosVolcado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REDUCCIÓN DE % DE SÓLIDOS - VOLCADO"
+                android:layout_marginLeft="@dimen/margen"
+                android:layout_marginRight="@dimen/margen"
+                android:layout_marginTop="@dimen/margen"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                />
+
+
             <Button
                 android:id="@+id/densificacionBarita"
                 android:layout_width="match_parent"
