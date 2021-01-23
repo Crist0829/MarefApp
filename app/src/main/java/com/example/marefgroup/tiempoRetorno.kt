@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 import java.math.RoundingMode
 
 class tiempoRetorno : AppCompatActivity() {
@@ -155,24 +156,24 @@ class tiempoRetorno : AppCompatActivity() {
 
             }else{
 
+                try {
 
+                    var DPM = extractor(auxDPM, auxDPI)
+                    var DTM = extractor(auxDTM, auxDTI)
+                    var CB = extractorP(auxCB, auxCBI)
+                    var PM = extractorpro(auxPM, auxPI)
+                    val const : Double = 0.7854
+                    val resultado : TextView = findViewById(R.id.resultado)
 
-                var DPM = extractor(auxDPM, auxDPI)
-                var DTM = extractor(auxDTM, auxDTI)
-                var CB = extractorP(auxCB, auxCBI)
-                var PM = extractorpro(auxPM, auxPI)
-                val const : Double = 0.7854
-                val resultado : TextView = findViewById(R.id.resultado)
+                    var auxResultado = ((const * (DPM/1000) * (DPM/1000) * PM * 1000) - (const * (DTM / 1000) * (DTM / 1000) * PM * 1000))/CB
+                    resultado.text = "Min = " + redondear(auxResultado, 3).toString()
+                }catch (e : Exception){
 
-                var auxResultado = ((const * (DPM/1000) * (DPM/1000) * PM * 1000) - (const * (DTM / 1000) * (DTM / 1000) * PM * 1000))/CB
-                resultado.text = "Min = " + redondear(auxResultado, 3).toString()
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
 
-
-
-
+                }
 
             }
-
 
         }
 

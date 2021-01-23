@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 import java.math.RoundingMode
 
 class volumenTanqueRectangular : AppCompatActivity() {
@@ -110,25 +111,31 @@ class volumenTanqueRectangular : AppCompatActivity() {
 
             }else{
 
-                var Longitud = extractorP(auxLongM, auxLongI)
-                var Ancho = extractorP(auxAnchoM, auxAnchoI)
-                var PM = extractorP(auxPM, auxPI)
+                try {
 
-                Toast.makeText(this, Longitud.toString(), Toast.LENGTH_SHORT).show()
+                    var Longitud = extractorP(auxLongM, auxLongI)
+                    var Ancho = extractorP(auxAnchoM, auxAnchoI)
+                    var PM = extractorP(auxPM, auxPI)
 
-                val volumenMetrico : TextView = findViewById(R.id.volumenMetrico)
+                    val volumenMetrico : TextView = findViewById(R.id.volumenMetrico)
 
-                var auxVolumenMetricoM3 = redondear((PM * Ancho * Longitud), 3)
-                var auxVolumenMetricoL =  redondear((auxVolumenMetricoM3 * 1000), 3)
+                    var auxVolumenMetricoM3 = redondear((PM * Ancho * Longitud), 3)
+                    var auxVolumenMetricoL =  redondear((auxVolumenMetricoM3 * 1000), 3)
 
-                volumenMetrico.text = "M3 = " + auxVolumenMetricoM3.toString() + "  L = " + auxVolumenMetricoL.toString()
+                    volumenMetrico.text = "M³ = " + auxVolumenMetricoM3.toString() + "  L = " + auxVolumenMetricoL.toString()
 
-                val volumenImp : TextView = findViewById(R.id.volumenImp)
+                    val volumenImp : TextView = findViewById(R.id.volumenImp)
 
-                var auxVolumenBbl = redondear((auxVolumenMetricoL*6.29), 3)
-                var auxVolumenGal = redondear((auxVolumenMetricoM3*264.172), 3)
+                    var auxVolumenBbl = redondear((auxVolumenMetricoL*6.29), 3)
+                    var auxVolumenGal = redondear((auxVolumenMetricoM3*264.172), 3)
 
-                volumenImp.text = "bbl = " + auxVolumenBbl.toString() + "  gal = " + auxVolumenGal.toString()
+                    volumenImp.text = "bbl = " + auxVolumenBbl.toString() + "  gal = " + auxVolumenGal.toString()
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
 
 
 

@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 import java.math.RoundingMode
 
 class porcentajeSolidos : AppCompatActivity() {
@@ -104,15 +105,21 @@ class porcentajeSolidos : AppCompatActivity() {
             }else{
 
 
-                var DPM = extractor(auxDS, auxDSI)
+                try {
+                    var DPM = extractor(auxDS, auxDSI)
 
-                val const : Double = 7.25
-                val const2 : Double = 8.345
+                    val const : Double = 7.25
+                    val const2 : Double = 8.345
 
-                val porcentajesolidos : TextView = findViewById(R.id.porcentajesolidos)
+                    val porcentajesolidos : TextView = findViewById(R.id.porcentajesolidos)
 
-                Toast.makeText(this, DPM.toString(), Toast.LENGTH_SHORT).show()
-                porcentajesolidos.text = redondear((const * ((DPM * 8.33) - const2)), 3).toString() + "%"
+                    porcentajesolidos.text = redondear((const * ((DPM * 8.33) - const2)), 3).toString() + "%"
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
 
 
             }

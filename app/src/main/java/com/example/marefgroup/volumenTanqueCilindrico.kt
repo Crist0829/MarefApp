@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import org.w3c.dom.Text
+import java.lang.Exception
 import java.math.RoundingMode
 
 class volumenTanqueCilindrico : AppCompatActivity() {
@@ -122,24 +123,32 @@ class volumenTanqueCilindrico : AppCompatActivity() {
 
             }else{
 
-                var DM = extractorP(auxDM, auxDI)
-                var PM = extractorP(auxPM, auxPI)
-                val const : Double = 3.141592
+                try {
 
-                val volumenMetrico : TextView = findViewById(R.id.volumenmetrico)
+                    var DM = extractorP(auxDM, auxDI)
+                    var PM = extractorP(auxPM, auxPI)
+                    val const : Double = 3.141592
 
-                val auxVolumenMetricoM3 = redondear((const * ((DM / 2) * (DM / 2)) * 2), 3)
-                val auxVolumenL = auxVolumenMetricoM3 * 1000
+                    val volumenMetrico : TextView = findViewById(R.id.volumenmetrico)
 
-                volumenMetrico.text = "M3 = " + auxVolumenMetricoM3.toString() + "  L = " + auxVolumenL.toString()
+                    val auxVolumenMetricoM3 = redondear((const * ((DM / 2) * (DM / 2)) * 2), 3)
+                    val auxVolumenL = auxVolumenMetricoM3 * 1000
+
+                    volumenMetrico.text = "M³ = " + auxVolumenMetricoM3.toString() + "  L = " + auxVolumenL.toString()
 
 
-                val volumenImperial : TextView = findViewById(R.id.volumenimp)
+                    val volumenImperial : TextView = findViewById(R.id.volumenimp)
 
-                val auxVolumenImpGal = redondear((auxVolumenMetricoM3*264.172) , 3)
-                val auxVolumenImpbbl = redondear((auxVolumenL*6.29), 3)
+                    val auxVolumenImpGal = redondear((auxVolumenMetricoM3*264.172) , 3)
+                    val auxVolumenImpbbl = redondear(((auxVolumenL/1000)*6.29), 3)
 
-                volumenImperial.text = "gal = " + auxVolumenImpGal.toString() + "  bbl = " + auxVolumenImpbbl.toString()
+                    volumenImperial.text = "gal = " + auxVolumenImpGal.toString() + "  bbl = " + auxVolumenImpbbl.toString()
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
 
 
 

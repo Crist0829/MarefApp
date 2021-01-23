@@ -264,6 +264,7 @@
                 android:background="@color/naranja"
                 android:textColor="@color/white"
                 android:fontFamily="@font/roboto_medium"
+                android:visibility="gone"
                 />
         </LinearLayout>
 

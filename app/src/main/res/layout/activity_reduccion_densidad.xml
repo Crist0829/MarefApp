@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/titulo"
         style="@style/titulos"
-        android:text="DENSIFICACIÓN CON BARITA:"
+        android:text="REDUCCIÓN DE DENSIDAD DE LODO POR DISOLUCIÓN:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Selecciona el peso de la barita (SG - PPG): "
+                android:text="Volumen Inicial: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -85,71 +85,47 @@
                 android:layout_gravity="center"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/b1"
+                <EditText
+                    android:id="@+id/volumenInicialM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/roboto_medium"
-                    android:padding="8dp"
-                    android:text="3.8\n31.7"
-                    android:textColor="@color/black" />
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:hint="L"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
 
-                <TextView
-                    android:id="@+id/b2"
+                <EditText
+                    android:id="@+id/volumenInicialI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3.9\n32.5"
-                    android:padding="8dp"
-                    android:layout_margin="4dp"
-                    android:background="@color/white"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/roboto_medium"
-                    />
-
-                <TextView
-                    android:id="@+id/b3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4.0\n33.4"
-                    android:layout_margin="4dp"
-                    android:padding="8dp"
-                    android:background="@color/white"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/roboto_medium"
-                    />
-
-                <TextView
-                    android:id="@+id/b4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4.1\n34.2"
-                    android:padding="8dp"
-                    android:layout_margin="4dp"
-                    android:background="@color/white"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/roboto_medium"
-                    />
-
-                <TextView
-                    android:id="@+id/b5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4.2\n35.1"
-                    android:padding="8dp"
-                    android:layout_margin="4dp"
-                    android:background="@color/white"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/roboto_medium"
-                    />
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_weight="1"
+                    android:hint="Gal"
+                    android:layout_marginTop="0dp"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
 
             </LinearLayout>
+
+
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Peso inicial: "
+                android:text="Peso del lodo inicial: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -202,7 +178,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Peso deseado: "
+                android:text="Peso del lodo deseado: "
                 style="@style/textoContent"
                 android:layout_marginBottom="0dp"
                 android:textSize="20dp"
@@ -239,6 +215,60 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:ems="6"
+                    android:hint="ppg"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Peso del fluido de disolucion: "
+                style="@style/textoContent"
+                android:layout_marginBottom="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/naranja"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margen"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/pesofluidoM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margen"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:hint="sg"
+                    android:ems="6"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/naranja"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/gris"
+                    android:textColorLink="@color/black"
+                    android:textCursorDrawable="@color/black" />
+
+                <EditText
+                    android:id="@+id/pesofluidoI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margen"
                     android:layout_weight="1"
                     android:hint="ppg"
                     android:layout_marginTop="0dp"
@@ -251,6 +281,7 @@
                     android:textCursorDrawable="@color/black" />
 
             </LinearLayout>
+
 
             <Button
                 android:id="@+id/calcular"
@@ -289,7 +320,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margen"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="DENSIFICACIÓN CON BARITA: "
+                    android:text="VOLUMEN A AGREGAR: "
                     android:textColor="@color/black"
                     android:textSize="18dp" />
 
@@ -311,7 +342,7 @@
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/densificacionBaritaMetrico"
+                        android:id="@+id/volumenAM"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/naranja"
@@ -340,7 +371,7 @@
                         android:textSize="14dp" />
 
                     <TextView
-                        android:id="@+id/densificacionBaritaImp"
+                        android:id="@+id/volumenAI"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/naranja"

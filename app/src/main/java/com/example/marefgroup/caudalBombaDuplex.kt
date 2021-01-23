@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 import java.math.RoundingMode
 
 class caudalBombaDuplex : AppCompatActivity() {
@@ -121,22 +122,30 @@ class caudalBombaDuplex : AppCompatActivity() {
 
             }else{
 
-                var DCM = extractor(auxDCM, auxDCI)
-                var LongM = extractor(auxLongM, auxLongI)
-                var LongEM = extractor(auxLongEM, auxLongEI)
-                var EFI = auxEfi.toDouble()
-                var TIEMPO = auxTiempo.toDouble()
-                val const : Double = 0.000068
+                try {
 
-                val caudalBombaMetrico : TextView = findViewById(R.id.caudalbombametrico)
-                val caudalBombaImp : TextView = findViewById(R.id.caudalbombaImp)
+                    var DCM = extractor(auxDCM, auxDCI)
+                    var LongM = extractor(auxLongM, auxLongI)
+                    var LongEM = extractor(auxLongEM, auxLongEI)
+                    var EFI = auxEfi.toDouble()
+                    var TIEMPO = auxTiempo.toDouble()
+                    val const : Double = 0.000068
 
-                val auxCaudalImperial = redondear((const * (2*((DCM / 25.39) * (DCM / 25.39)) - ((LongM / 25.39) * (LongM / 25.39)))*(LongEM / 25.39) * EFI * TIEMPO), 3)
+                    val caudalBombaMetrico : TextView = findViewById(R.id.caudalbombametrico)
+                    val caudalBombaImp : TextView = findViewById(R.id.caudalbombaImp)
 
-                val auxCaudalMetrico = redondear(auxCaudalImperial*3.7585, 3)
+                    val auxCaudalImperial = redondear((const * (2*((DCM / 25.39) * (DCM / 25.39)) - ((LongM / 25.39) * (LongM / 25.39)))*(LongEM / 25.39) * EFI * TIEMPO), 3)
 
-                caudalBombaMetrico.text = "L/min = " + auxCaudalMetrico.toString() + "   L/Embolada = " + (auxCaudalMetrico/TIEMPO).toString()
-                caudalBombaImp.text = "Gal/min = " + auxCaudalImperial.toString() + "  Gal/Embolada = " + redondear((auxCaudalImperial/TIEMPO), 3).toString()
+                    val auxCaudalMetrico = redondear(auxCaudalImperial*3.7585, 3)
+
+                    caudalBombaMetrico.text = "L/min = " + auxCaudalMetrico.toString() + "   L/Embolada = " + (auxCaudalMetrico/TIEMPO).toString()
+                    caudalBombaImp.text = "Gal/min = " + auxCaudalImperial.toString() + "  Gal/Embolada = " + redondear((auxCaudalImperial/TIEMPO), 3).toString()
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
 
 
             }

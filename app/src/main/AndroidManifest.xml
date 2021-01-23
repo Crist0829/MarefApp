@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".densificacionBarita"></activity>
+        <activity android:name=".velocidadPenetracion"></activity>
+        <activity android:name=".reduccionDensidad" />
+        <activity android:name=".densificacionBarita" />
         <activity android:name=".reduccionVolcado" />
         <activity android:name=".reduccionDisolucion" />
         <activity android:name=".caudalBombaTriplex" />

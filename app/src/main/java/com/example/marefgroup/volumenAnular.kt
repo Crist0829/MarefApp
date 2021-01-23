@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 import java.math.RoundingMode
 
 class volumenAnular : AppCompatActivity() {
@@ -125,27 +126,35 @@ class volumenAnular : AppCompatActivity() {
 
             }else{
 
-                var DPM = extractor(auxDPM, auxDPI)
-                var DTM = extractor(auxDTM, auxDTI)
-                var PM = extractorP(auxPM, auxPI)
-                val const : Double = 0.7854
+               try {
 
-                val volumenAnular : Double = (const * (DPM/1000) * (DPM/1000) * PM * 1000) - (const * (DTM / 1000) * (DTM / 1000) * PM * 1000)
+                   var DPM = extractor(auxDPM, auxDPI)
+                   var DTM = extractor(auxDTM, auxDTI)
+                   var PM = extractorP(auxPM, auxPI)
+                   val const : Double = 0.7854
 
-                val volumenAnularMetrico : TextView = findViewById(R.id.volumenanularmetrico)
-                val volumenanularImp : TextView = findViewById(R.id.volumenanularimp)
+                   val volumenAnular : Double = (const * (DPM/1000) * (DPM/1000) * PM * 1000) - (const * (DTM / 1000) * (DTM / 1000) * PM * 1000)
 
-                volumenAnularMetrico.text = "L = " + redondear(volumenAnular, 3).toString()
-                volumenanularImp.text = "Gal = " + redondear((volumenAnular * 0.264172), 3).toString()
+                   val volumenAnularMetrico : TextView = findViewById(R.id.volumenanularmetrico)
+                   val volumenanularImp : TextView = findViewById(R.id.volumenanularimp)
 
-                val capacidadAnularlm : Double =  volumenAnular / PM
-                var capacidadAnularm3m : Double = capacidadAnularlm / 1000
+                   volumenAnularMetrico.text = "L = " + redondear(volumenAnular, 3).toString()
+                   volumenanularImp.text = "Gal = " + redondear((volumenAnular * 0.264172), 3).toString()
 
-                val capacidadAnularMetrico : TextView = findViewById(R.id.capacidadanularmetrico)
-                val capacidadAnularImperial : TextView = findViewById(R.id.capacidadanularimp)
+                   val capacidadAnularlm : Double =  volumenAnular / PM
+                   var capacidadAnularm3m : Double = capacidadAnularlm / 1000
 
-                capacidadAnularMetrico.text = "L/m = " + redondear(capacidadAnularlm, 3).toString() + "   M3/m = " + redondear(capacidadAnularm3m, 3).toString()
-                capacidadAnularImperial.text = "Gal/pie(ft) = " + redondear(((volumenAnular * 0.264172) /(PM / 0.3048)), 3).toString() + "   bbl/pie(ft) = " + redondear(((volumenAnular /1000*6.29)/(PM/0.3048)), 3).toString()
+                   val capacidadAnularMetrico : TextView = findViewById(R.id.capacidadanularmetrico)
+                   val capacidadAnularImperial : TextView = findViewById(R.id.capacidadanularimp)
+
+                   capacidadAnularMetrico.text = "L/m = " + redondear(capacidadAnularlm, 3).toString() + "   M³/m = " + redondear(capacidadAnularm3m, 3).toString()
+                   capacidadAnularImperial.text = "Gal/pie(ft) = " + redondear(((volumenAnular * 0.264172) /(PM / 0.3048)), 3).toString() + "   bbl/pie(ft) = " + redondear(((volumenAnular /1000*6.29)/(PM/0.3048)), 3).toString()
+
+               }catch (e : Exception){
+
+                   Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+               }
 
 
 

@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 import java.math.RoundingMode
 
 class reduccionDisolucion : AppCompatActivity() {
@@ -126,19 +127,27 @@ class reduccionDisolucion : AppCompatActivity() {
 
             }else{
 
-                var TotalM = extractor(auxTotalM, auxTotalI)
-                var SolidosT = auxSolidosT.toDouble()
-                var SolidosD = auxSolidosD.toDouble()
+                try {
 
-                val volumenAgregar : TextView = findViewById(R.id.volumenAgregarM)
-                val volumenAgregarI : TextView = findViewById(R.id.volumenAgregarImp)
+                    var TotalM = extractor(auxTotalM, auxTotalI)
+                    var SolidosT = auxSolidosT.toDouble()
+                    var SolidosD = auxSolidosD.toDouble()
 
-                val auxVolumenAgregarL = redondear(TotalM * (SolidosT/SolidosD-1), 3)
-                val auxVolumenAgregarM3 = redondear(auxVolumenAgregarL/1000, 3)
+                    val volumenAgregar : TextView = findViewById(R.id.volumenAgregarM)
+                    val volumenAgregarI : TextView = findViewById(R.id.volumenAgregarImp)
 
-                volumenAgregar.text = "L = " + auxVolumenAgregarL.toString() + "   M3 = " + auxVolumenAgregarM3.toString()
+                    val auxVolumenAgregarL = redondear(TotalM * (SolidosT/SolidosD-1), 3)
+                    val auxVolumenAgregarM3 = redondear(auxVolumenAgregarL/1000, 3)
 
-                volumenAgregarI.text = "gal = " + redondear((auxVolumenAgregarL*0.264172), 3) + "  bbl = " + redondear(auxVolumenAgregarM3*6.29, 3).toString()
+                    volumenAgregar.text = "L = " + auxVolumenAgregarL.toString() + "   M³ = " + auxVolumenAgregarM3.toString()
+
+                    volumenAgregarI.text = "gal = " + redondear((auxVolumenAgregarL*0.264172), 3) + "  bbl = " + redondear(auxVolumenAgregarM3*6.29, 3).toString()
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
 
 
             }

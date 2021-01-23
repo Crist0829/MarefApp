@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.Exception
 import java.math.RoundingMode
 
 class reduccionVolcado : AppCompatActivity() {
@@ -123,27 +124,35 @@ class reduccionVolcado : AppCompatActivity() {
 
             }else{
 
-                var TotalM = extractor(auxTotalM, auxTotalI)
-                var SolidosT = auxSolidosT.toDouble()
-                var SolidosD = auxSolidosD.toDouble()
+                try {
 
-                val volumenRetenerM : TextView = findViewById(R.id.volumenRetenerM)
-                val volumenRetenerI : TextView = findViewById(R.id.volumenRetenerImp)
+                    var TotalM = extractor(auxTotalM, auxTotalI)
+                    var SolidosT = auxSolidosT.toDouble()
+                    var SolidosD = auxSolidosD.toDouble()
 
-                val auxVolumenRetenerL = redondear(TotalM * SolidosD / SolidosT, 3)
-                val auxVolumenRetenerM3 = redondear(auxVolumenRetenerL / 1000, 3)
+                    val volumenRetenerM : TextView = findViewById(R.id.volumenRetenerM)
+                    val volumenRetenerI : TextView = findViewById(R.id.volumenRetenerImp)
 
-                volumenRetenerM.text = "L = " + auxVolumenRetenerL.toString() + "   M3 = " + auxVolumenRetenerM3.toString()
-                volumenRetenerI.text = "gal = " + redondear((auxVolumenRetenerL*0.264172), 3) + "  bbl = " + redondear(auxVolumenRetenerM3*6.29, 3).toString()
+                    val auxVolumenRetenerL = redondear(TotalM * SolidosD / SolidosT, 3)
+                    val auxVolumenRetenerM3 = redondear(auxVolumenRetenerL / 1000, 3)
 
-                val volumenDesecharM : TextView = findViewById(R.id.volumenDesecharM)
-                val volumenDesecharI : TextView = findViewById(R.id.volumenDesecharImp)
+                    volumenRetenerM.text = "L = " + auxVolumenRetenerL.toString() + "   M³  = " + auxVolumenRetenerM3.toString()
+                    volumenRetenerI.text = "gal = " + redondear((auxVolumenRetenerL*0.264172), 3) + "  bbl = " + redondear(auxVolumenRetenerM3*6.29, 3).toString()
 
-                val auxVolumenAgregarL = redondear(TotalM - auxVolumenRetenerL, 3)
-                val auxVolumenAgregarM3 = redondear(auxVolumenAgregarL/1000, 3)
+                    val volumenDesecharM : TextView = findViewById(R.id.volumenDesecharM)
+                    val volumenDesecharI : TextView = findViewById(R.id.volumenDesecharImp)
 
-                volumenDesecharM.text = "L = " + auxVolumenAgregarL.toString() + "   M3 = " + auxVolumenAgregarM3.toString()
-                volumenDesecharI.text = "gal = " + redondear((auxVolumenAgregarL*0.264172), 3) + "  bbl = " + redondear(auxVolumenAgregarM3*6.29, 3).toString()
+                    val auxVolumenAgregarL = redondear(TotalM - auxVolumenRetenerL, 3)
+                    val auxVolumenAgregarM3 = redondear(auxVolumenAgregarL/1000, 3)
+
+                    volumenDesecharM.text = "L = " + auxVolumenAgregarL.toString() + "   M³ = " + auxVolumenAgregarM3.toString()
+                    volumenDesecharI.text = "gal = " + redondear((auxVolumenAgregarL*0.264172), 3) + "  bbl = " + redondear(auxVolumenAgregarM3*6.29, 3).toString()
+
+                }catch (e : Exception){
+
+                    Toast.makeText(this, "Verifica que en cada campo hay un valor correcto", Toast.LENGTH_SHORT).show()
+
+                }
 
 
 

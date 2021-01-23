@@ -137,7 +137,6 @@
                 style="@style/botones_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 app:srcCompat="@drawable/calculos" />
 
             <ImageButton
@@ -145,7 +144,8 @@
                 style="@style/botones_int"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/catalogo" />
+                app:srcCompat="@drawable/catalogo"
+                android:visibility="gone"/>
 
             <ImageButton
                 android:id="@+id/contacto"

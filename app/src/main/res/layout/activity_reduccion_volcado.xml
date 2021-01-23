@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/titulo"
         style="@style/titulos"
-        android:text="REDUCCIÓN % DE SÓLIDOS - POR DISOLUCIÓN"
+        android:text="REDUCCIÓN % DE SÓLIDOS - POR VOLCADO Y DISOLUCIÓN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintStart_toStartOf="parent"
