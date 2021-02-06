@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="margen_button">32dp</dimen>
+
+    <dimen name="margen">16dp</dimen>
+    <dimen name="margenMedio">8dp</dimen>
+    <dimen name="margenPeque">4dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="paddingMedio">8dp</dimen>
+    <dimen name="paddingPeque">4dp</dimen>
+
+
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 
 import android.view.View
 import android.widget.*
@@ -42,6 +43,115 @@ class MainActivity : AppCompatActivity() {
             startActivity(setting)
 
         }
+
+        var han = Handler()
+
+        fun sliceRepeat(){
+
+            when(count){
+
+                1-> {
+                    val imagen = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.constraintLayout)
+                    val boton = findViewById<TextView>(R.id.botones_imagen)
+                    val texto = findViewById<TextView>(R.id.texto_imagenes)
+
+                    val navButton1 = findViewById<Button>(R.id.nav_button1)
+                    val navButton2 = findViewById<Button>(R.id.nav_button2)
+                    val navButton3 = findViewById<Button>(R.id.nav_button3)
+
+                    boton.text = "Aula Virtual"
+                    imagen.setBackgroundResource(R.drawable.img1)
+                    texto.setText(R.string.capacitaciones)
+                    navButton1.setBackgroundResource(R.drawable.circle01)
+                    navButton2.setBackgroundResource(R.drawable.circle02)
+                    navButton3.setBackgroundResource(R.drawable.circle02)
+
+                    countLink = 1
+                    count ++
+
+                }
+
+                2-> {
+
+                    val imagen = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.constraintLayout)
+                    val texto = findViewById<TextView>(R.id.texto_imagenes)
+                    val boton = findViewById<TextView>(R.id.botones_imagen)
+                    imagen.setBackgroundResource(R.drawable.img2)
+
+
+                    val navButton1 = findViewById<Button>(R.id.nav_button1)
+                    val navButton2 = findViewById<Button>(R.id.nav_button2)
+                    val navButton3 = findViewById<Button>(R.id.nav_button3)
+
+                    boton.text = "EQUIPOS"
+                    texto.setText(R.string.aditivos)
+
+                    navButton1.setBackgroundResource(R.drawable.circle02)
+                    navButton2.setBackgroundResource(R.drawable.circle01)
+                    navButton3.setBackgroundResource(R.drawable.circle02)
+
+                    countLink = 2
+                    count ++
+
+
+                }
+
+                3 -> {
+
+                    val imagen = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.constraintLayout)
+                    val texto = findViewById<TextView>(R.id.texto_imagenes)
+                    val boton = findViewById<TextView>(R.id.botones_imagen)
+
+                    val navButton1 = findViewById<Button>(R.id.nav_button1)
+                    val navButton2 = findViewById<Button>(R.id.nav_button2)
+                    val navButton3 = findViewById<Button>(R.id.nav_button3)
+
+                    boton.text = "PRODUCTOS"
+                    imagen.setBackgroundResource(R.drawable.img3)
+                    texto.setText(R.string.equipos)
+
+
+                    navButton1.setBackgroundResource(R.drawable.circle02)
+                    navButton2.setBackgroundResource(R.drawable.circle02)
+                    navButton3.setBackgroundResource(R.drawable.circle01)
+
+                    countLink = 3
+                    count = 1
+
+                }
+
+
+            }
+
+
+        }
+
+        val repetir = Thread(Runnable {
+
+            while (true){
+
+                try {
+
+                    Thread.sleep(2800)
+
+                }catch (e : InterruptedException){
+
+                    e.printStackTrace()
+
+                }
+
+                han.post(Runnable {
+
+                    sliceRepeat()
+
+                })
+
+            }
+
+        })
+        repetir.start()
+
+
     }
 
     // Esta funcion es la encargada de cambiar las imagenes "fondos" del slice
@@ -171,8 +281,9 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.catalogo -> {
 
-                val cambiar : Intent = Intent(this, Catalogo::class.java)
-                startActivity(cambiar)
+                val uri : Uri = Uri.parse("https://maref.com.ar/productos/")
+                val intent : Intent = Intent(Intent.ACTION_VIEW, uri)
+                startActivity(intent)
 
             }
             R.id.contacto -> {
@@ -210,17 +321,15 @@ class MainActivity : AppCompatActivity() {
                     }
 
 
-
-
                 }
 
 
             }
 
 
-
         }
 
     }
+
 
 }

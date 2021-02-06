@@ -139,170 +139,172 @@
             </LinearLayout>
 
 
-
-
-
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Diámetro del pozo: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:layout_marginTop="0dp"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/margen"
+                android:padding="@dimen/paddingMedio">
 
-                <EditText
-                    android:id="@+id/diametroPozo"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:hint="mm"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
+                    android:text="Diámetro del pozo: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
                     android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black"/>
+                    android:layout_gravity="center_horizontal"
+                    />
 
-                <EditText
-                    android:id="@+id/diametroPozoI"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_weight="1"
-                    android:hint="pul"
-                    android:layout_marginTop="0dp"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
+                    android:layout_margin="@dimen/margenMedio"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/diametroPozo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:hint="mm"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/diametroPozoI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_weight="1"
+                        android:hint="pul"
+                        android:layout_marginTop="0dp"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profundidad: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
                     android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margenMedio"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/profundidad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:hint="m"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                    <EditText
+                        android:id="@+id/profundidadI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_weight="1"
+                        android:hint="pie"
+                        android:layout_marginTop="0dp"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Caudal de la bomba: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
+                    android:textColor="@color/naranja"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margenMedio"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/caudalBombaM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:hint="L/min"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                    <EditText
+                        android:id="@+id/caudalBombaI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_weight="1"
+                        android:hint="Gal/min"
+                        android:layout_marginTop="0dp"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profundidad: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:layout_marginTop="0dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/profundidad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:hint="m"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
-
-                <EditText
-                    android:id="@+id/profundidadI"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_weight="1"
-                    android:hint="pie"
-                    android:layout_marginTop="0dp"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Caudal de la bomba: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:layout_marginTop="0dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/caudalBombaM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:hint="L/min"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
-
-                <EditText
-                    android:id="@+id/caudalBombaI"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_weight="1"
-                    android:hint="Gal/min"
-                    android:layout_marginTop="0dp"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
-                    android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
-
-            </LinearLayout>
 
             <Button
                 android:id="@+id/calcular"
@@ -314,63 +316,77 @@
                 android:textColor="@color/black"
                 android:background="@color/white"/>
 
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:fontFamily="@font/roboto_black"
-                android:layout_marginTop="@dimen/margen"
-                android:text="RESULTADOS:"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                />
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/margen"
+                android:padding="@dimen/paddingMedio">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margen"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="VELOCIDAD DE PENETRACIÓN: "
+                    android:fontFamily="@font/roboto_black"
+                    android:layout_marginTop="@dimen/margen"
+                    android:text="RESULTADOS:"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    />
+
+                <View
+                    android:id="@+id/divider15"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="start">
+                    android:layout_gravity="start"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/velocidadpenetracion"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/naranja"
                         android:layout_margin="@dimen/margen"
-                        android:textSize="24dp"
-                        android:textAlignment="center"
-                        android:layout_marginLeft="0dp"
-                        android:text=""
-                        android:visibility="visible"
-                        android:gravity="center_horizontal" />
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="VELOCIDAD DE PENETRACIÓN: "
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="start">
+
+                        <TextView
+                            android:id="@+id/velocidadpenetracion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/naranja"
+                            android:layout_margin="@dimen/margen"
+                            android:textSize="24dp"
+                            android:textAlignment="center"
+                            android:layout_marginLeft="0dp"
+                            android:text=""
+                            android:visibility="visible"
+                            android:gravity="center_horizontal" />
+
+
+
+                    </LinearLayout>
+
+
 
 
 
                 </LinearLayout>
-
-
-
-
 
             </LinearLayout>
 

@@ -122,7 +122,7 @@ class volumenAnular : AppCompatActivity() {
 
             if(validacion(auxDPM, auxDPI) == 1 || validacion(auxDTM, auxDTI) == 1 || validacion(auxPM, auxPI) == 1){
 
-                Toast.makeText(this, "Por favor, para cada medida llenar un campo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, para cada medida llenar un solo campo", Toast.LENGTH_SHORT).show()
 
             }else{
 

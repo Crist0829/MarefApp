@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 
@@ -62,7 +63,7 @@ class Settings : AppCompatActivity() {
 
                 if(count == 0){
 
-                    val ubicacion : TextView = findViewById(R.id.ayudaContenido)
+                    val ubicacion : LinearLayout = findViewById(R.id.ayudaContenido)
                     val icono = ContextCompat.getDrawable(this, R.drawable.arrow_down)
                     val ayuda = findViewById<TextView>(R.id.ayudaTitulo)
                     if (icono != null) {
@@ -74,7 +75,7 @@ class Settings : AppCompatActivity() {
 
                 }else{
 
-                    val ubicacion : TextView = findViewById(R.id.ayudaContenido)
+                    val ubicacion : LinearLayout = findViewById(R.id.ayudaContenido)
                     val icono = ContextCompat.getDrawable(this, R.drawable.arrow_right)
                     val ayuda = findViewById<TextView>(R.id.ayudaTitulo)
 
@@ -94,7 +95,7 @@ class Settings : AppCompatActivity() {
 
                 if(count2 == 0){
 
-                    val ubicacion : TextView = findViewById(R.id.actualizacionContenido)
+                    val ubicacion : LinearLayout = findViewById(R.id.actualizacionesContenido)
                     val icono = ContextCompat.getDrawable(this, R.drawable.arrow_down)
                     val actual = findViewById<TextView>(R.id.actualizacionesTitulo)
                     if (icono != null) {
@@ -106,7 +107,7 @@ class Settings : AppCompatActivity() {
 
                 }else{
 
-                    val contenido : TextView = findViewById(R.id.actualizacionContenido)
+                    val contenido : LinearLayout = findViewById(R.id.actualizacionesContenido)
                     val icono = ContextCompat.getDrawable(this, R.drawable.arrow_right)
                     val actual = findViewById<TextView>(R.id.actualizacionesTitulo)
 

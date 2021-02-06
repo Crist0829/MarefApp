@@ -66,44 +66,130 @@
             android:background="@color/gris_claro">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Diámetro de camisa: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:layout_marginTop="0dp"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/margen"
+                android:padding="@dimen/paddingMedio">
 
-                <EditText
-                    android:id="@+id/diametroCamisaM"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:hint="mm"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
+                    android:text="Diámetro de camisa: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
                     android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black"/>
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margenMedio"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/diametroCamisaM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:hint="mm"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/diametroCamisaI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_weight="1"
+                        android:hint="pul"
+                        android:layout_marginTop="0dp"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Longitud de la embolada: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
+                    android:textColor="@color/naranja"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margenMedio"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/emboladaM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:hint="mm"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                    <EditText
+                        android:id="@+id/emboladaI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_weight="1"
+                        android:hint="pul"
+                        android:layout_marginTop="0dp"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eficiencia de la bomba (%): "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
+                    android:textColor="@color/naranja"
+                    android:layout_gravity="center_horizontal"
+                    />
 
                 <EditText
-                    android:id="@+id/diametroCamisaI"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/eficiencia"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_weight="1"
@@ -113,124 +199,42 @@
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
                     android:textColorHighlight="@color/black"
+                    android:textAlignment="center"
                     android:textColorHint="@color/gris"
                     android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
+                    android:textCursorDrawable="@color/black"
+                    android:gravity="center_horizontal" />
 
-            </LinearLayout>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Longitud de la embolada: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:layout_marginTop="0dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/emboladaM"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
-                    android:layout_marginTop="0dp"
-                    android:layout_weight="1"
-                    android:hint="mm"
-                    android:ems="6"
-                    android:inputType="numberDecimal"
+                    android:text="Tiempo embolada: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
                     android:textColor="@color/naranja"
-                    android:textColorHighlight="@color/black"
-                    android:textColorHint="@color/gris"
-                    android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
+                    android:layout_gravity="center_horizontal"
+                    />
 
                 <EditText
-                    android:id="@+id/emboladaI"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tiempoEmbolada"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margen"
                     android:layout_weight="1"
-                    android:hint="pul"
+                    android:hint="emb/min"
                     android:layout_marginTop="0dp"
                     android:ems="6"
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
                     android:textColorHighlight="@color/black"
+                    android:textAlignment="center"
                     android:textColorHint="@color/gris"
                     android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
+                    android:textCursorDrawable="@color/black"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/margen"/>
 
             </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Eficiencia de la bomba (%): "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
-            <EditText
-                android:id="@+id/eficiencia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margen"
-                android:layout_weight="1"
-                android:hint="pul"
-                android:layout_marginTop="0dp"
-                android:ems="6"
-                android:inputType="numberDecimal"
-                android:textColor="@color/naranja"
-                android:textColorHighlight="@color/black"
-                android:textAlignment="center"
-                android:textColorHint="@color/gris"
-                android:textColorLink="@color/black"
-                android:textCursorDrawable="@color/black"
-                android:gravity="center_horizontal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tiempo embolada: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
-            <EditText
-                android:id="@+id/tiempoEmbolada"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margen"
-                android:layout_weight="1"
-                android:hint="emb/min"
-                android:layout_marginTop="0dp"
-                android:ems="6"
-                android:inputType="numberDecimal"
-                android:textColor="@color/naranja"
-                android:textColorHighlight="@color/black"
-                android:textAlignment="center"
-                android:textColorHint="@color/gris"
-                android:textColorLink="@color/black"
-                android:textCursorDrawable="@color/black"
-                android:gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/margen"/>
 
 
 
@@ -245,104 +249,113 @@
                 android:background="@color/white"/>
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:fontFamily="@font/roboto_black"
-                android:layout_marginTop="@dimen/margen"
-                android:text="RESULTADOS:"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                />
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/margen"
+                android:padding="@dimen/paddingMedio">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margen"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="CAUDAL DE LA BOMBA: "
+                    android:fontFamily="@font/roboto_black"
+                    android:layout_marginTop="@dimen/margen"
+                    android:text="RESULTADOS:"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    />
 
+                <View
+                    android:id="@+id/divider10"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margen"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/roboto"
-                        android:text="MÉTRICO:"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="CAUDAL DE LA BOMBA: "
                         android:textColor="@color/black"
-                        android:textSize="14dp" />
+                        android:textSize="18dp" />
 
-                    <TextView
-                        android:id="@+id/caudalbombametrico"
-                        android:layout_width="wrap_content"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margen"
-                        android:layout_marginLeft="0dp"
-                        android:text=""
-                        android:textColor="@color/naranja"
-                        android:visibility="visible" />
+                        android:layout_gravity="start"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margen"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="MÉTRICO:"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/caudalbombametrico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margen"
+                            android:layout_marginLeft="0dp"
+                            android:text=""
+                            android:textColor="@color/naranja"
+                            android:visibility="visible" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margen"
+                            android:fontFamily="@font/roboto"
+                            android:text="IMPERIAL:"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/caudalbombaImp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/naranja"
+                            android:layout_margin="@dimen/margen"
+                            android:layout_marginLeft="0dp"
+                            android:text=""
+                            android:visibility="visible"/>
+
+
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margen"
-                        android:fontFamily="@font/roboto"
-                        android:text="IMPERIAL:"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:id="@+id/caudalbombaImp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/naranja"
-                        android:layout_margin="@dimen/margen"
-                        android:layout_marginLeft="0dp"
-                        android:text=""
-                        android:visibility="visible"/>
-
-
-
-
-                </LinearLayout>
-
 
             </LinearLayout>
-
-
-
-
-
-
 
 
         </LinearLayout>

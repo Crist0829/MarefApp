@@ -66,116 +66,123 @@
             android:background="@color/gris_claro">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Volumen total: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:layout_marginTop="0dp"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/margen"
+                android:padding="@dimen/paddingMedio">
 
-                <EditText
-                    android:id="@+id/volumenTotalM"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
+                    android:text="Volumen total: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
+                    android:textColor="@color/naranja"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margen"
                     android:layout_marginTop="0dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/volumenTotalM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:hint="L"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black"/>
+
+                    <EditText
+                        android:id="@+id/volumenTotalI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margen"
+                        android:layout_weight="1"
+                        android:hint="bbl"
+                        android:layout_marginTop="0dp"
+                        android:ems="6"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/naranja"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/gris"
+                        android:textColorLink="@color/black"
+                        android:textCursorDrawable="@color/black" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sólidos totales: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
+                    android:textColor="@color/naranja"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <EditText
+                    android:id="@+id/solidostotales"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margenMedio"
                     android:layout_weight="1"
-                    android:hint="L"
+                    android:hint="%"
                     android:ems="6"
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
                     android:textColorHighlight="@color/black"
                     android:textColorHint="@color/gris"
                     android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black"/>
+                    android:textCursorDrawable="@color/black"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal" />
 
-                <EditText
-                    android:id="@+id/volumenTotalI"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margen"
+                    android:text="Sólidos deseados: "
+                    android:layout_margin="@dimen/margenMedio"
+                    android:textSize="20dp"
+                    android:textColor="@color/naranja"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <EditText
+                    android:id="@+id/solidosdeseados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margenMedio"
                     android:layout_weight="1"
-                    android:hint="bbl"
-                    android:layout_marginTop="0dp"
+                    android:hint="%"
                     android:ems="6"
                     android:inputType="numberDecimal"
                     android:textColor="@color/naranja"
                     android:textColorHighlight="@color/black"
                     android:textColorHint="@color/gris"
                     android:textColorLink="@color/black"
-                    android:textCursorDrawable="@color/black" />
+                    android:textCursorDrawable="@color/black"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal" />
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sólidos totales: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
-            <EditText
-                android:id="@+id/solidostotales"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:layout_weight="1"
-                android:hint="%"
-                android:ems="6"
-                android:inputType="numberDecimal"
-                android:textColor="@color/naranja"
-                android:textColorHighlight="@color/black"
-                android:textColorHint="@color/gris"
-                android:textColorLink="@color/black"
-                android:textCursorDrawable="@color/black"
-                android:textAlignment="center"
-                android:gravity="center_horizontal" />
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sólidos deseados: "
-                style="@style/textoContent"
-                android:layout_marginBottom="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/naranja"
-                android:layout_gravity="center_horizontal"
-                />
-
-            <EditText
-                android:id="@+id/solidosdeseados"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:layout_weight="1"
-                android:hint="%"
-                android:ems="6"
-                android:inputType="numberDecimal"
-                android:textColor="@color/naranja"
-                android:textColorHighlight="@color/black"
-                android:textColorHint="@color/gris"
-                android:textColorLink="@color/black"
-                android:textCursorDrawable="@color/black"
-                android:textAlignment="center"
-                android:gravity="center_horizontal" />
 
             <Button
                 android:id="@+id/calcular"
@@ -188,161 +195,186 @@
                 android:background="@color/white"/>
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margen"
-                android:fontFamily="@font/roboto_black"
-                android:layout_marginTop="@dimen/margen"
-                android:text="RESULTADOS:"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                />
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/margen"
+                android:padding="@dimen/paddingMedio">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margen"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="VOLUMEN PARA DESECHAR: "
+                    android:fontFamily="@font/roboto_black"
+                    android:layout_marginTop="@dimen/margen"
+                    android:text="RESULTADOS:"
                     android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:textSize="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    />
 
+                <View
+                    android:id="@+id/divider12"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        android:layout_margin="@dimen/margen"
+                        android:padding="@dimen/paddingMedio">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margen"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="VOLUMEN PARA DESECHAR: "
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margen"
+                                android:layout_marginRight="0dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/roboto"
+                                android:text="MÉTRICO:"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                            <TextView
+                                android:id="@+id/volumenDesecharM"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margen"
+                                android:layout_marginLeft="0dp"
+                                android:text=""
+                                android:textColor="@color/naranja"
+                                android:visibility="visible" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margen"
+                            android:fontFamily="@font/roboto"
+                            android:text="IMPERIAL:"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/volumenDesecharImp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/naranja"
+                            android:layout_margin="@dimen/margen"
+                            android:layout_marginLeft="0dp"
+                            android:text=""
+                            android:visibility="visible"/>
+
+
+                    </LinearLayout>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margen"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/roboto"
-                        android:text="MÉTRICO:"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="VOLUMEN A RETENER: "
                         android:textColor="@color/black"
-                        android:textSize="14dp" />
+                        android:textSize="18dp" />
 
-                    <TextView
-                        android:id="@+id/volumenDesecharM"
-                        android:layout_width="wrap_content"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margen"
-                        android:layout_marginLeft="0dp"
-                        android:text=""
-                        android:textColor="@color/naranja"
-                        android:visibility="visible" />
+                        android:layout_gravity="start"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margen"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginBottom="4dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="MÉTRICO:"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/volumenRetenerM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margen"
+                            android:layout_marginLeft="0dp"
+                            android:text=""
+                            android:textColor="@color/naranja"
+                            android:visibility="visible" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margen"
+                            android:fontFamily="@font/roboto"
+                            android:text="IMPERIAL:"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/volumenRetenerImp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/naranja"
+                            android:layout_margin="@dimen/margen"
+                            android:layout_marginLeft="0dp"
+                            android:text=""
+                            android:visibility="visible"/>
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margen"
-                        android:fontFamily="@font/roboto"
-                        android:text="IMPERIAL:"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:id="@+id/volumenDesecharImp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/naranja"
-                        android:layout_margin="@dimen/margen"
-                        android:layout_marginLeft="0dp"
-                        android:text=""
-                        android:visibility="visible"/>
-
-
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margen"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="VOLUMEN A RETENER: "
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margen"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/roboto"
-                        android:text="MÉTRICO:"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:id="@+id/volumenRetenerM"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margen"
-                        android:layout_marginLeft="0dp"
-                        android:text=""
-                        android:textColor="@color/naranja"
-                        android:visibility="visible" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margen"
-                        android:fontFamily="@font/roboto"
-                        android:text="IMPERIAL:"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:id="@+id/volumenRetenerImp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/naranja"
-                        android:layout_margin="@dimen/margen"
-                        android:layout_marginLeft="0dp"
-                        android:text=""
-                        android:visibility="visible"/>
-
-
-                </LinearLayout>
-
 
             </LinearLayout>
 
