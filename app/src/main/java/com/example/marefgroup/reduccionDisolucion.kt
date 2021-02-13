@@ -27,6 +27,16 @@ class reduccionDisolucion : AppCompatActivity() {
 
         }
 
+        val EditTotalM : EditText = findViewById(R.id.volumenTotalM) // volumen total métrico
+        val EditTotalI : EditText = findViewById(R.id.volumenTotalI)// Volumen total imperial
+
+        /* Devuelve el numero decimal redondeado */
+        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
+
+            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
+
+        }
+
         fun validacion(a : String, b : String): Int{
 
             var cont : Int = 0
@@ -62,11 +72,13 @@ class reduccionDisolucion : AppCompatActivity() {
 
             if(a.equals("")){
 
-                var axub = b.toDouble() * 158.9873
+                var axub = ((b.toDouble() / 6.29) * 1000)
+                EditTotalM.hint = redondear( axub, 3).toString() + " L"
                 return axub
 
             }else{
-
+                var auxa = (a.toDouble() / 1000) * 6.29
+                EditTotalI.hint = redondear(auxa, 3).toString() + " bbl"
                 return a.toDouble()
             }
 
@@ -74,39 +86,13 @@ class reduccionDisolucion : AppCompatActivity() {
 
         /*--------------------------------------------------*/
 
-        /*Hace lo mismo que la función anterior pero aplicando la forma para pasar
-        * de pies a metros*/
-        fun extractorP(a : String, b : String): Double{
 
-            if(a.equals("")){
-
-                var axub = b.toDouble() * 158.9873
-                return axub
-
-            }else{
-
-                return a.toDouble()
-            }
-
-
-        }
-
-        /* Devuelve el numero decimal redondeado */
-        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
-
-            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
-
-        }
 
 
 
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
-
-
-            val EditTotalM : EditText = findViewById(R.id.volumenTotalM) // volumen total métrico
-            val EditTotalI : EditText = findViewById(R.id.volumenTotalI)// Volumen total imperial
 
             val EditSolidosT : EditText = findViewById(R.id.solidostotales)
             val EditSolidosD : EditText = findViewById(R.id.solidosdeseados)

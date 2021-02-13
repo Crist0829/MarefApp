@@ -155,6 +155,22 @@ class velocidadPenetracion : AppCompatActivity() {
 
         }
 
+        val EditDPM : EditText = findViewById(R.id.diametroPozo) // Diametro del pozo métrico
+        val EditDPI : EditText = findViewById(R.id.diametroPozoI)// Diametro del pozo en imperial
+
+        val EditPM  : EditText = findViewById(R.id.profundidad) // Profundidad métrico
+        val EditPI : EditText = findViewById(R.id.profundidadI) // Profundidad imperial
+
+        val EditCBM : EditText = findViewById(R.id.caudalBombaM) // Caudal de la bomba Métrico
+        val EditCBI : EditText = findViewById(R.id.caudalBombaI) // Caudal de la bomba Imperial
+
+        /* Devuelve el numero decimal redondeado */
+        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
+
+            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
+
+        }
+
         fun validacion(a : String, b : String): Int{
 
             var cont : Int = 0
@@ -191,10 +207,14 @@ class velocidadPenetracion : AppCompatActivity() {
             if(a.equals("")){
 
                 var axub = b.toDouble() * 25.39
+                EditDPM.hint = redondear(axub, 3).toString() + " mm"
                 return axub
 
             }else{
 
+                var axua = a.toDouble() / 25.39
+
+                EditDPI.hint = redondear(axua, 3).toString() + " pul"
                 return a.toDouble()
             }
 
@@ -209,10 +229,13 @@ class velocidadPenetracion : AppCompatActivity() {
             if(a.equals("")){
 
                 var axub = b.toDouble() / 3.28084
+                EditPM.hint = redondear(axub, 3).toString() + " m"
                 return axub
 
             }else{
 
+                var axua = a.toDouble() * 3.28084
+                EditPI.hint = redondear(axua, 3).toString() + " pie"
                 return a.toDouble()
             }
 
@@ -220,44 +243,32 @@ class velocidadPenetracion : AppCompatActivity() {
         }
 
         /*Hace lo mismo que la función anterior pero aplicando la forma para pasar
-        * de galones a litros*/
+        * de litros a galones*/
         fun extractorCB(a : String, b : String): Double{
 
             if(a.equals("")){
 
-                var axub = b.toDouble() * 3.785
+                var auxb : Double = redondear(b.toDouble(), 3)
+                var axub = redondear((auxb * 3.785), 3)
+                EditCBM.hint = axub.toString() + " L/min"
                 return axub
 
             }else{
 
-                return a.toDouble()
+                var auxa : Double = redondear(a.toDouble(), 3)
+                val axua = redondear(auxa / 3.785, 3)
+                EditCBI.hint = axua.toString() + " gal/min"
+                return auxa.toDouble()
             }
 
 
         }
 
 
-        /* Devuelve el numero decimal redondeado */
-        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
-
-            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
-
-        }
-
 
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
-
-
-            val EditDPM : EditText = findViewById(R.id.diametroPozo) // Diametro del pozo métrico
-            val EditDPI : EditText = findViewById(R.id.diametroPozoI)// Diametro del pozo en imperial
-
-            val EditPM  : EditText = findViewById(R.id.profundidad) // Profundidad métrico
-            val EditPI : EditText = findViewById(R.id.profundidadI) // Profundidad imperial
-
-            val EditCBM : EditText = findViewById(R.id.caudalBombaM)
-            val EditCBI : EditText = findViewById(R.id.caudalBombaI)
 
             /*Variables auxiliares para hacer los condicionales*/
             val auxDPM = EditDPM.text.toString()

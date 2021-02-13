@@ -25,6 +25,15 @@ class velocidadAnularLodo : AppCompatActivity() {
 
         }
 
+        val EditDPM : EditText = findViewById(R.id.diametroPozo) // Diametro del pozo métrico
+        val EditDPI : EditText = findViewById(R.id.diametroPozoI)// Diametro del pozo en imperial
+
+        val EditDTM : EditText = findViewById(R.id.diametroTuberia) // Diametro de tubería métrico
+        val EditDTI : EditText = findViewById(R.id.diametroTuberiaI)// Diametro de tubería imperial
+
+        val EditCB  : EditText = findViewById(R.id.caudalbombam) // Profundidad métrico
+        val EditCBI : EditText = findViewById(R.id.caudalbombaI) // Profundidad imperial
+
         /* Devuelve el numero decimal redondeado */
         fun redondear(number : Double, numDecimalesPlaces: Int): Double {
 
@@ -67,15 +76,38 @@ class velocidadAnularLodo : AppCompatActivity() {
 
             if(a.equals("")){
 
-
-                var axub = b.toDouble() * 25.4
-                return redondear(axub, 3)
+                var axub = b.toDouble() * 25.39
+                EditDPM.hint = redondear(axub, 3).toString() + " mm"
+                return axub
 
             }else{
 
-                var auxa : Double = redondear(a.toDouble(), 3)
+                var axua = a.toDouble() / 25.39
 
-                return redondear(auxa.toDouble(), 3)
+                EditDPI.hint = redondear(axua, 3).toString() + " pul"
+                return a.toDouble()
+            }
+
+        }
+
+        /*--------------------------------------------------*/
+
+        /*---Esta función extrae de el numero que fue escrito y si fue en el sistema imperial
+         *devuelve el número convertido en métrico---*/
+        fun extractorDT(a : String, b : String): Double{
+
+            if(a.equals("")){
+
+                var axub = b.toDouble() * 25.39
+                EditDTM.hint = redondear(axub, 3).toString() + " mm"
+                return axub
+
+            }else{
+
+                var axua = a.toDouble() / 25.39
+
+                EditDTI.hint = redondear(axua, 3).toString() + " pul"
+                return a.toDouble()
             }
 
         }
@@ -83,19 +115,21 @@ class velocidadAnularLodo : AppCompatActivity() {
         /*--------------------------------------------------*/
 
         /*Hace lo mismo que la función anterior pero aplicando la forma para pasar
-        * de pies a metros*/
+        * de litros a galones*/
         fun extractorP(a : String, b : String): Double{
 
             if(a.equals("")){
 
                 var auxb : Double = redondear(b.toDouble(), 3)
-
                 var axub = redondear((auxb * 3.785), 3)
+                EditCB.hint = axub.toString() + " L/min"
                 return axub
 
             }else{
 
                 var auxa : Double = redondear(a.toDouble(), 3)
+                val axua = redondear(auxa / 3.785, 3)
+                EditCBI.hint = axua.toString() + " gal/min"
                 return auxa.toDouble()
             }
 
@@ -106,17 +140,6 @@ class velocidadAnularLodo : AppCompatActivity() {
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
-
-
-
-            val EditDPM : EditText = findViewById(R.id.diametroPozo) // Diametro del pozo métrico
-            val EditDPI : EditText = findViewById(R.id.diametroPozoI)// Diametro del pozo en imperial
-
-            val EditDTM : EditText = findViewById(R.id.diametroTuberia) // Diametro de tubería métrico
-            val EditDTI : EditText = findViewById(R.id.diametroTuberiaI)// Diametro de tubería imperial
-
-            val EditCB  : EditText = findViewById(R.id.caudalbombam) // Profundidad métrico
-            val EditCBI : EditText = findViewById(R.id.caudalbombaI) // Profundidad imperial
 
             /*Variables auxiliares para hacer los condicionales*/
             val auxDPM = EditDPM.text.toString()
@@ -138,7 +161,7 @@ class velocidadAnularLodo : AppCompatActivity() {
                 try {
 
                     var DPM = extractor(auxDPM, auxDPI)
-                    var DTM = extractor(auxDTM, auxDTI)
+                    var DTM = extractorDT(auxDTM, auxDTI)
                     var CB = extractorP(auxCB, auxCBI)
                     val const : Double = 1270.0
 

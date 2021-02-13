@@ -25,6 +25,20 @@ class volumenTanqueCilindrico : AppCompatActivity() {
 
         }
 
+        val EditDM : EditText = findViewById(R.id.diametroM) // Diametro métrico
+        val EditDI : EditText = findViewById(R.id.diametroI)// Diametro imperial
+
+        val EditPM  : EditText = findViewById(R.id.profundidad) // Profundidad métrico
+        val EditPI : EditText = findViewById(R.id.profundidadI) // Profundidad imperial
+
+        /* Devuelve el numero decimal redondeado */
+        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
+
+            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
+
+        }
+
+
         fun validacion(a : String, b : String): Int{
 
             var cont : Int = 0
@@ -54,60 +68,50 @@ class volumenTanqueCilindrico : AppCompatActivity() {
 
         }
 
-        /*---Esta función extrae de el numero que fue escrito y si fue en el sistema imperial
-         *devuelve el número convertido en métrico---*/
-        fun extractor(a : String, b : String): Double{
-
-            if(a.equals("")){
-
-                var axub = b.toDouble() * 25.39
-                return axub
-
-            }else{
-
-                return a.toDouble()
-            }
-
-        }
-
-        /*--------------------------------------------------*/
-
         /*Hace lo mismo que la función anterior pero aplicando la forma para pasar
         * de pies a metros*/
-        fun extractorP(a : String, b : String): Double{
+        fun extractorP1(a : String, b : String): Double{
 
             if(a.equals("")){
 
                 var axub = b.toDouble() / 3.28084
+                EditDM.hint = redondear(axub, 3).toString() + " m"
                 return axub
 
             }else{
 
+                var axua = a.toDouble() * 3.28084
+                EditDI.hint = redondear(axua, 3).toString() + " pie"
                 return a.toDouble()
             }
 
 
         }
 
-        /* Devuelve el numero decimal redondeado */
-        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
+        /*Hace lo mismo que la función anterior pero aplicando la forma para pasar
+        * de pies a metros*/
+        fun extractorP2(a : String, b : String): Double{
 
-            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
+            if(a.equals("")){
+
+                var axub = b.toDouble() / 3.28084
+                EditPM.hint = redondear(axub, 3).toString() + " m"
+                return axub
+
+            }else{
+
+                var axua = a.toDouble() * 3.28084
+                EditPI.hint = redondear(axua, 3).toString() + " pie"
+                return a.toDouble()
+            }
+
 
         }
-
 
 
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
-
-
-            val EditDM : EditText = findViewById(R.id.diametroM) // Diametro métrico
-            val EditDI : EditText = findViewById(R.id.diametroI)// Diametro imperial
-
-            val EditPM  : EditText = findViewById(R.id.profundidad) // Profundidad métrico
-            val EditPI : EditText = findViewById(R.id.profundidadI) // Profundidad imperial
 
             /*Variables auxiliares para hacer los condicionales*/
             val auxDM = EditDM.text.toString()
@@ -125,8 +129,8 @@ class volumenTanqueCilindrico : AppCompatActivity() {
 
                 try {
 
-                    var DM = extractorP(auxDM, auxDI)
-                    var PM = extractorP(auxPM, auxPI)
+                    var DM = extractorP1(auxDM, auxDI)
+                    var PM = extractorP2(auxPM, auxPI)
                     val const : Double = 3.141592
 
                     val volumenMetrico : TextView = findViewById(R.id.volumenmetrico)

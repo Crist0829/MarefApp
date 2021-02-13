@@ -24,6 +24,9 @@ class porcentajeSolidos : AppCompatActivity() {
 
         }
 
+        val EditDSM : EditText = findViewById(R.id.densidadM) // Densidad del sólido
+        val EditDSI : EditText = findViewById(R.id.densidadI)//Densidad del sólido en imperial
+
 
         /* Devuelve el numero decimal redondeado */
         fun redondear(number : Double, numDecimalesPlaces: Int): Double {
@@ -69,13 +72,14 @@ class porcentajeSolidos : AppCompatActivity() {
             if(a.equals("")){
 
 
-                var axub = b.toDouble() / 8.33
+                var axub = redondear(b.toDouble() / 8.33, 3)
+                EditDSM.hint = "$axub sg"
                 return redondear(axub, 3)
 
             }else{
 
                 var auxa : Double = redondear(a.toDouble(), 3)
-
+                EditDSI.hint = (auxa * 8.33).toString() + " ppg"
                 return redondear(auxa.toDouble(), 3)
             }
 
@@ -87,11 +91,6 @@ class porcentajeSolidos : AppCompatActivity() {
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
-
-
-
-            val EditDSM : EditText = findViewById(R.id.densidadM) // Densidad del sólido
-            val EditDSI : EditText = findViewById(R.id.densidadI)//Densidad del sólido en imperial
 
             /*Variables auxiliares para hacer los condicionales*/
             val auxDS = EditDSM.text.toString()

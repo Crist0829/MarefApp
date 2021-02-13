@@ -27,6 +27,12 @@ class densificacionBarita : AppCompatActivity() {
 
         }
 
+        val EditPesoIncialM : EditText = findViewById(R.id.pesoinicialM) // Peso inicial métrico
+        val EditPesoInicialI : EditText = findViewById(R.id.pesoinicialI)// peso inicial imperial
+
+        val EditPesoDeseadoM : EditText = findViewById(R.id.pesodeseadoM) // Peso deseado métricos
+        val EditPesoDeseadoI : EditText = findViewById(R.id.pesodeseadoI) // Peso deseado imperial
+
 
         var const : Double = 1.0 //Esta es la constante que sería el peso de la barita que cambiará de valor cada vez
                      //que el usuario presione el botón correspondiente
@@ -241,18 +247,41 @@ class densificacionBarita : AppCompatActivity() {
 
         /*---Esta función extrae de el numero que fue escrito y si fue en el sistema imperial
          *devuelve el número convertido en métrico---*/
-        fun extractor(a : String, b : String): Double{
+        fun extractor1(a : String, b : String): Double{
 
             if(a.equals("")){
 
 
-                var axub = b.toDouble() / 8.33
+                var axub = redondear(b.toDouble() / 8.33, 3)
+                EditPesoIncialM.hint = "$axub sg"
                 return redondear(axub, 3)
 
             }else{
 
                 var auxa : Double = redondear(a.toDouble(), 3)
+                EditPesoInicialI.hint = (auxa * 8.33).toString() + " ppg"
+                return redondear(auxa.toDouble(), 3)
+            }
 
+        }
+
+        /*--------------------------------------------------*/
+
+        /*---Esta función extrae de el numero que fue escrito y si fue en el sistema imperial
+         *devuelve el número convertido en métrico---*/
+        fun extractor2(a : String, b : String): Double{
+
+            if(a.equals("")){
+
+
+                var axub = redondear(b.toDouble() / 8.33, 3)
+                EditPesoDeseadoM.hint = "$axub sg"
+                return redondear(axub, 3)
+
+            }else{
+
+                var auxa : Double = redondear(a.toDouble(), 3)
+                EditPesoDeseadoI.hint = (auxa * 8.33).toString() + " ppg"
                 return redondear(auxa.toDouble(), 3)
             }
 
@@ -264,14 +293,6 @@ class densificacionBarita : AppCompatActivity() {
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
-
-
-
-            val EditPesoIncialM : EditText = findViewById(R.id.pesoinicialM) // Peso inicial métrico
-            val EditPesoInicialI : EditText = findViewById(R.id.pesoinicialI)// peso inicial imperial
-
-            val EditPesoDeseadoM : EditText = findViewById(R.id.pesodeseadoM) // Peso deseado métricos
-            val EditPesoDeseadoI : EditText = findViewById(R.id.pesodeseadoI) // Peso deseado imperial
 
             /*Variables auxiliares para hacer los condicionales*/
             val auxPesoInicialM = EditPesoIncialM.text.toString()
@@ -295,8 +316,8 @@ class densificacionBarita : AppCompatActivity() {
 
 
                 try {
-                    var pesoInicial = extractor(auxPesoInicialM, auxPesoInicialI)
-                    var pesoDeseado = extractor(auxPesoDeseadoM, auxPesoDeseadoI)
+                    var pesoInicial = extractor1(auxPesoInicialM, auxPesoInicialI)
+                    var pesoDeseado = extractor2(auxPesoDeseadoM, auxPesoDeseadoI)
 
                     val densificacionBaritaM : TextView = findViewById(R.id.densificacionBaritaMetrico)
 

@@ -24,6 +24,20 @@ class caudalBombaTriplex : AppCompatActivity() {
 
         }
 
+        val EditDCM : EditText = findViewById(R.id.diametroCamisaM) // Diametro de camisa métrico
+        val EditDCI : EditText = findViewById(R.id.diametroCamisaI)// Diametro de camisa imperial
+
+
+        val EditLongEM  : EditText = findViewById(R.id.emboladaM) // Longitud de la embolada métrico
+        val EditLongEI : EditText = findViewById(R.id.emboladaI)// Longitud de la embolada imperial
+
+        /* Devuelve el numero decimal redondeado */
+        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
+
+            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
+
+        }
+
         fun validacion(a : String, b : String): Int{
 
             var cont : Int = 0
@@ -55,15 +69,41 @@ class caudalBombaTriplex : AppCompatActivity() {
 
         /*---Esta función extrae de el numero que fue escrito y si fue en el sistema imperial
          *devuelve el número convertido en métrico---*/
-        fun extractor(a : String, b : String): Double{
+        fun extractor1(a : String, b : String): Double{
 
             if(a.equals("")){
 
                 var axub = b.toDouble() * 25.39
+                EditDCM.hint = redondear(axub, 3).toString() + " mm"
                 return axub
 
             }else{
 
+                var axua = a.toDouble() / 25.39
+
+                EditDCI.hint = redondear(axua, 3).toString() + " pul"
+                return a.toDouble()
+            }
+
+        }
+
+        /*--------------------------------------------------*/
+
+        /*---Esta función extrae de el numero que fue escrito y si fue en el sistema imperial
+         *devuelve el número convertido en métrico---*/
+        fun extractor2(a : String, b : String): Double{
+
+            if(a.equals("")){
+
+                var axub = b.toDouble() * 25.39
+                EditLongEM.hint = redondear(axub, 3).toString() + " mm"
+                return axub
+
+            }else{
+
+                var axua = a.toDouble() / 25.39
+
+                EditLongEI.hint = redondear(axua, 3).toString() + " pul"
                 return a.toDouble()
             }
 
@@ -73,26 +113,11 @@ class caudalBombaTriplex : AppCompatActivity() {
 
 
 
-        /* Devuelve el numero decimal redondeado */
-        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
-
-            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
-
-        }
-
-
 
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
 
-
-            val EditDCM : EditText = findViewById(R.id.diametroCamisaM) // Diametro de camisa métrico
-            val EditDCI : EditText = findViewById(R.id.diametroCamisaI)// Diametro de camisa imperial
-
-
-            val EditLongEM  : EditText = findViewById(R.id.emboladaM) // Longitud de la embolada métrico
-            val EditLongEI : EditText = findViewById(R.id.emboladaI)// Longitud de la embolada imperial
 
             val EditEficiencia : EditText = findViewById(R.id.eficiencia)
 
@@ -120,8 +145,8 @@ class caudalBombaTriplex : AppCompatActivity() {
 
                 try {
 
-                    var DCM = extractor(auxDCM, auxDCI)
-                    var LongEM = extractor(auxLongEM, auxLongEI)
+                    var DCM = extractor1(auxDCM, auxDCI)
+                    var LongEM = extractor2(auxLongEM, auxLongEI)
                     var EFI = auxEfi.toDouble()
                     var TIEMPO = auxTiempo.toDouble()
                     val const : Double = 0.000102101

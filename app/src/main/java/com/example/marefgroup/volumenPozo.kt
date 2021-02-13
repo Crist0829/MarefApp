@@ -28,6 +28,18 @@ class volumenPozo : AppCompatActivity() {
 
         }
 
+        val EditDPM : EditText = findViewById(R.id.diametroPozoM)// Diametro del pozo métrico
+        val EditDPI : EditText = findViewById(R.id.diametroPozoI)// Diametro del pozo en imperial
+        val EditLM  : EditText = findViewById(R.id.longitudM)//Longitud del pozo métrico
+        val EditLI : EditText = findViewById(R.id.longitudI)//Longitud del pozo imperial
+
+        /* Devuelve el numero decimal redondeado */
+        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
+
+            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
+
+        }
+
         fun validacion(a : String, b : String): Int{
 
             var cont : Int = 0
@@ -62,10 +74,14 @@ class volumenPozo : AppCompatActivity() {
             if(a.equals("")){
 
                 var axub = b.toDouble() * 25.39
+                EditDPM.hint = redondear(axub, 3).toString() + " mm"
                 return axub
 
             }else{
 
+                var axua = a.toDouble() / 25.39
+
+                EditDPI.hint = redondear(axua, 3).toString() + " pul"
                 return a.toDouble()
             }
 
@@ -80,36 +96,23 @@ class volumenPozo : AppCompatActivity() {
             if(a.equals("")){
 
                 var axub = b.toDouble() / 3.28084
+                EditLM.hint = redondear(axub, 3).toString() + " m"
                 return axub
 
             }else{
 
+                var axua = a.toDouble() * 3.28084
+                EditLI.hint = redondear(axua, 3).toString() + " pie"
                 return a.toDouble()
             }
 
 
         }
 
-        /* Devuelve el numero decimal redondeado */
-        fun redondear(number : Double, numDecimalesPlaces: Int): Double {
-
-            return number.toBigDecimal().setScale(3, RoundingMode.HALF_UP).toDouble()
-
-        }
-
-
 
         val calcular : Button = findViewById(R.id.calcular)
 
         calcular.setOnClickListener{
-
-
-            val EditDPM : EditText = findViewById(R.id.diametroPozoM)// Diametro del pozo métrico
-            val EditDPI : EditText = findViewById(R.id.diametroPozoI)// Diametro del pozo en imperial
-
-            val EditLM  : EditText = findViewById(R.id.longitudM)//Longitud del pozo métrico
-            val EditLI : EditText = findViewById(R.id.longitudI)//Longitud del pozo imperial
-
 
             /*Variables auxiliares para hacer los condicionales*/
             val auxDPM = EditDPM.text.toString()
@@ -127,7 +130,7 @@ class volumenPozo : AppCompatActivity() {
                 try {
                     var DP = extractor(auxDPM, auxDPI)
                     var Lon = extractorP(auxLM, auxLI)
-                    val const : Double = 0.7854
+                    val const = 0.7854
 
                     val volumenPozoM : TextView = findViewById(R.id.volumenPozoM)
                     val volumenPozoI : TextView = findViewById(R.id.volumenPozoImp)
